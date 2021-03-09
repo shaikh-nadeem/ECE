@@ -1,32 +1,51 @@
 <?php
 
-//namespace App\Http\Controllers;
-//
-//use Illuminate\Http\Request;
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Auth;
 
 class LoginController extends Controller
 {
-    public function __construct()
-    {
+    /*
+    |--------------------------------------------------------------------------
+    | Login Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller handles authenticating users for the application and
+    | redirecting them to your home screen. The controller uses a trait
+    | to conveniently provide its functionality to your applications.
+    |
+    */
+
+    use AuthenticatesUsers;
+
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct(){
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:admin')->except('logout');
         $this->middleware('guest:user')->except('logout');
     }
-    
-    public function showAdminLoginForm()
-    {
+        
+    public function showAdminLoginForm(){
         return view('auth.login', ['url' => 'admin']);
     }
 
-    public function adminLogin(Request $request)
-    {
+    public function adminLogin(Request $request){
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
@@ -39,13 +58,11 @@ class LoginController extends Controller
         return back()->withInput($request->only('email', 'remember'));
     }
     
-     public function showUserLoginForm()
-    {
+    public function showUserLoginForm(){
         return view('auth.login', ['url' => 'user']);
     }
 
-    public function userLogin(Request $request)
-    {
+    public function userLogin(Request $request){
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
