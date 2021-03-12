@@ -37,51 +37,42 @@
         <script src="{{asset('assets/admin/js/legacy.min.js')}}"></script>
 
 
-         <script type="text/javascript" src="{{asset('assets/admin/js/parsley.min.js')}}"></script>
+         <!--<script type="text/javascript" src="{{asset('assets/admin/js/parsley.min.js')}}"></script>-->
 
 
         <script src="{{asset('assets/admin/js/jquery.core.js')}}"></script>
         <script src="{{asset('assets/admin/js/jquery.app.js')}}"></script>
-
-     <!--    <script>
-            $(document).ready(function() {
-                $(".icone").hide();
-                $('.inputGender1').change(function(){
-                    var current_ele = this ;
-                    current_ele.nextElementSibling = CSS('display','block');
-                    debugger ;
-                });
-            });
-        </script> -->
+        
+        <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('assets/admin/js/custom.js')}}"></script>
        
        <script>
-            $(function() {
-                $(".subcon-icon").hide();
-                $(document).on("change",'.inputGender1',function(e){
-                    e.preventDefault();
-                    var thisid=$(this).attr("id");
-                    var thisval=$("#"+thisid+" option:selected").html();
-                    if(thisval=="Sub contract"){
-                        $("."+thisid).show();
-                    }else{
-                        $("."+thisid).hide();
-                    }
+           $( document ).ready(function() {
+                $(function() {
+                    $(".subcon-icon").hide();
+                    $(document).on("change",'.inputGender1',function(e){
+                        e.preventDefault();
+                        var thisid=$(this).attr("id");
+                        var thisval=$("#"+thisid+" option:selected").html();
+                        if(thisval=="Sub contract"){
+                            $("."+thisid).show();
+                        }else{
+                            $("."+thisid).hide();
+                        }
+                    });
+                    $(".subcon-icon-d").show();
                 });
-                $(".subcon-icon-d").show();
             });
-       </script>
-       <script type="text/javascript">
-            $(document).ready(function() {
-                $('form').parsley();
-            });
-        </script>
-        <script type="text/javascript">
+            
+//            $(document).ready(function() {
+//                $('form').parsley();
+//            });
+            
             $(document).ready(function(){
-                $("[rel=tooltip]").tooltip({ placement: 'top'});
+//                $("[rel=tooltip]").tooltip({ placement: 'top', animation: true});
+                $('[rel=tooltip]').tooltip({title: "", animation: true}); 
             });
-        </script>
-        
-        <script type="text/javascript">
+            
             $(document).ready(function () {
 
                 // Default Datatable
@@ -118,7 +109,6 @@
                     .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
             });
 
-        </script>
-        
+</script>
     </body>
 </html>

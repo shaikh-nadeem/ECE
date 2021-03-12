@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ECE/app/Http/Controllers/Auth/LoginController.php</file>
+            <file>file:/C:/xampp/htdocs/ECE/assets/admin/js/custom.js</file>
+            <file>file:/C:/xampp/htdocs/ECE/resources/views/pages/admin/faq.blade.php</file>
             <file>file:/C:/xampp/htdocs/ECE/routes/web.php</file>
+            <file>file:/C:/xampp/htdocs/ECE/app/Http/Controllers/Faq.php</file>
+            <file>file:/C:/xampp/htdocs/ECE/resources/views/includes/frontend-header.blade.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,5 +1,4 @@
 @include('includes.admin-header')
-@include('includes.admin-headermenu')
 <!-- Tabs -->
 @yield('content')
 <!-- ./Tabs -->

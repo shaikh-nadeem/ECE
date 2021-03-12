@@ -35,12 +35,12 @@ class ContactUserToAdmin extends Mailable
         $this->email=$data['email'];
         $this->purpose=$data['purpose'];
         $this->comments=$data['comments'];
-       $this->subject = $data['subject'];
+        $this->subject = $data['subject'];
        
-       $this->fromEmail = config('constants.SENDER_EMAIL');
-       $this->fromName = config('constants.SENDER_NAME');
-       $this->InfoMail = config('constants.INFOMAIL');
-       $this->AppName = env('APP_NAME');
+        $this->fromEmail = config('constants.SENDER_EMAIL');
+        $this->fromName = config('constants.SENDER_NAME');
+        $this->InfoMail = config('constants.INFOMAIL');
+        $this->AppName = env('APP_NAME');
     }
 
     /**

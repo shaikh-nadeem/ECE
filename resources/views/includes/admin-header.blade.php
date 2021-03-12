@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>ECE</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
         <!-- App favicon -->
@@ -22,7 +23,7 @@
         <link href="{{asset('assets/admin/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
         <script src="{{asset('assets/admin/js/modernizr.min.js')}}"></script>
-
+         
     </head>
 
     <body>

@@ -6,7 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Mail\LoginSecretKey;
+use App\Models\Admin;
 use Auth;
+use Session;
+use Mail;
 
 class LoginController extends Controller
 {
@@ -20,7 +25,15 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+    public $successCode = 200;
+    public $authonticationFail = 401;
+    public $internalError = 500;
+    public $validationError = 400;
+    public $validationErrorMessage = "Validation Error";
+    public $successMessage = "Successfully Send key";
+    public $failMessage = "Invalid Credential";
+    public $credentials;
+    
     use AuthenticatesUsers;
 
     /**
@@ -45,12 +58,47 @@ class LoginController extends Controller
         return view('auth.login', ['url' => 'admin']);
     }
 
+//    public function LoginSecretKey(Request $request){
     public function adminLogin(Request $request){
+        
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6',
+        ]);
+        //-----check secret key form field------//
+        if ($request->has('secret_key')) {
+            
+            $data = Admin::where('email', $request->email)->first();
+            //-----check secret key from database------//
+            if($data->secret_key == $request->secret_key){
+                if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
+                    return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE,'secret'=>true]], $this->successCode);
+                }
+            }else{
+                return response()->json(['code' => $this->successCode, 'message' => $this->failMessage, 'data' => ['status'=>FALSE,'secret'=>false]], $this->successCode);
+            }
+        }else{
+            //-----create secret key for login------//
+            $checkdata = Admin::where('email', '=', $request->email)->first();            
+            $checkPassword = Hash::check($request->password, $checkdata->password);
+            if ($checkPassword) {
+                $secret_key = substr(str_shuffle("0123456789"), 0, 4);
+                mail::to($request->email)->send(new LoginSecretKey($secret_key));  
+                Admin::where('email', $request->email)->update(['secret_key' => $secret_key]); 
+                
+                return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE,'email'=>true]], $this->successCode);
+            } else {
+                return response()->json(['code' => $this->successCode, 'message' => $this->failMessage, 'data' => ['status'=>false,'authentication'=>false]], $this->successCode);
+            }           
+        }
+    }
+
+    public function adminLoginyuu(Request $request){
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
         ]);
-
+        
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
             return redirect()->intended('/admin');
@@ -73,5 +121,16 @@ class LoginController extends Controller
             return redirect()->intended('/user');
         }
         return back()->withInput($request->only('email', 'remember'));
+    }
+    
+    
+     public function logout(Request $request) {
+           
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ?: redirect('/login/admin');
+
     }
 }

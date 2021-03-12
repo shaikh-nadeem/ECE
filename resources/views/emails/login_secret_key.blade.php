@@ -19,12 +19,11 @@
                                 </tr>
                                 <tr>
                                     <td style="font-size: 14px; text-align: left; line-height: 24px;padding: 30px;">                                        
-                                        <p style="font-weight: 600;font-size: 15px">Dear {{$name}},</p>
+                                        <p style="font-weight: 600;font-size: 15px">Dear Admin,</p>
                                         <p style="margin-bottom: 5px;margin-top: 0">Good Day.</p>
-                                        <p style="margin-bottom: 5px;margin-top: 0">{{$reply}}</p>                                       
-                                        <p style="margin-bottom: 15px;margin-top: 0">Have a good day ahead</p>
-                <p style="margin-bottom: 15px;margin-top: 0">Please reach us out on <a href="mailto:admin@eceteacher.co.nz">admin@eceteacher.co.nz</a> if you have something very important.</p>                             
-                                            <p style="margin-bottom: 0;margin-top: 35px;font-weight: 600">Thank you.</p>  
+                                        <p style="margin-bottom: 5px;margin-top: 0">Your login secret key is {{$secret_key}}</p>
+                                        <p style="margin-bottom: 15px;margin-top: 0">Email send from <a href="http://eceteacher.betadelivery.com/contact">http://eceteacher.betadelivery.com/contact</a></p>                             
+                                            <p style="margin-bottom: 0;margin-top: 35px;font-weight: 600">Thank you.</p> 
                                     </td>
                                 </tr>                           
                             </tbody>
