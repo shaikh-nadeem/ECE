@@ -161,6 +161,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
+        //captch
+        ElicDev\MathCaptcha\MathCaptchaServiceProvider::class,
 
         /*
          * Package Service Providers...

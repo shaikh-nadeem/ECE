@@ -225,8 +225,9 @@ $( document ).ready(function() {
             dataType:'json',
             success: function(result) {
                 console.log(result);
+                $('#ContactReplymodal').modal('hide');
 //                $("#contact_reply")[0].reset(); 
-//                location.reload();
+                location.reload();
             },
             error: function(xhr, ajaxOptions, thrownError){  
                 console.log('error');
@@ -281,6 +282,7 @@ $( document ).ready(function() {
                 },
                 password:{
                     required:true,
+                    minlength:6,
                 },
                 email:{
                     required:true,
@@ -322,20 +324,26 @@ $( document ).ready(function() {
                     }else if ((result.data.status == true) && (result.data.secret == true)) {
                         window.location.replace("/admin");                      
                     } else {
-//                        $('#otpMsg').html('Secret pin sent successfully on email id').fadeIn().delay(5000).fadeOut(1000).slideUp(1000);   //  Success msg on mail send
+                        swal("Otp Sent!", "Check your email", "success");
+                        $('.keyfield').css('display', 'block');
+                        $('#secret_key').attr('type', 'text');
                         $('#secret_key').prop('disabled', false);
                         $('#email').prop('readonly', true);
+                        $('#email').attr('type', 'hidden');
                         $('#password').prop('readonly', true);
-                        $('#circulardiv').css('display', 'block').fadeOut(5000).slideUp(1000);
-                        $('.submitbtn').html('Varify PIN');
-                        $(".alert-success").html(result.message).fadeIn().delay(5000).fadeOut(1000).slideUp(1000);
+                        $('#password').attr('type', 'hidden');
+//                        $('#circulardiv').css('display', 'block').fadeOut(5000).slideUp(1000);
+                        $('.submitbtn').html('Login');
+//                        $(".alert-success").html(result.message).fadeIn().delay(5000).fadeOut(1000).slideUp(1000);
                         
                     }
                     
                 },
                 error: function(xhr, ajaxOptions, thrownError){ 
+                        console.log('error:'+ xhr);
                         console.log('error:'+ ajaxOptions);
-//                        $(".alert-danger").html(thrownError).fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
+                        console.log('error:'+ thrownError);
+                        $(".alert-danger").html('Incorrect Email Or Password').fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
                     }
                 });
                 return false;

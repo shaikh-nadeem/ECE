@@ -1,6 +1,6 @@
 @extends('layouts.frontend-layout')
 @section('page_title')
-    {{ "Home page | "}}{{ config('app.name')}}
+    {{ "Contact | "}}{{ config('app.name')}}
 @endsection
 @section('content')
 
@@ -13,7 +13,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 contactRight">
-                <form class="contact_form" id="contact_form" action="http://eceteacher.betadelivery.com/send-contact" method="post">
+                <form class="contact_form" id="contact_form" action="{{url('/send-contact')}}" method="post">
                     @csrf
                     <div class="form-group">
                         <input type="text" class="form-control" name="name" id="name" placeholder="Your Name *">                     

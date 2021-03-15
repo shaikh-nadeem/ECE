@@ -6,12 +6,12 @@
 $( document ).ready(function() {
    
     jQuery.validator.addMethod("lettersWithSingleSpace", function(value, element) {
-        return this.optional(element) || /^[a-zA-Z]+$|^[a-zA-Z]+ [a-zA-Z]+$/i.test(value);
-    }, "Letters and single space allowed");
+        return this.optional(element) || /^[A-Za-z]{3,}$|^[A-Za-z]+\s+$|^([A-Za-z]{3,})+\s+([A-Za-z\s]{1,})+$/.test(value);
+    }, "Enter your name");
 
     $.validator.addMethod( "mobile", function( value, element ) {
-        return this.optional( element ) || /^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/i.test( value );
-    }, "The specified phone number is not valid");
+        return this.optional( element ) || /^[\d+](?:[0-9] ?){7,15}[\d ]{1}[0-9]$/.test( value );
+    }, "Number between 7 to 15 digits");
 
     $('#contact_form').validate({
         errorClass: 'invalid-feedback',
@@ -25,7 +25,9 @@ $( document ).ready(function() {
             },
             contact_number:{
                 required:true,
-                mobile : true
+                mobile : true,
+                minlength:7,
+                maxlength:15
             },
             email:{
                 required:true,
@@ -76,6 +78,7 @@ $( document ).ready(function() {
             type: form.attr('method'),
             data: formData,
             dataType:'json',
+            crossDomain:true,
             success: function(result) {
 //                    $('#sendNow').attr('disabled',false);
                 $("#contact_form")[0].reset();

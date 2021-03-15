@@ -23,6 +23,7 @@
         <link href="{{asset('assets/admin/css/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
 
         <script src="{{asset('assets/admin/js/modernizr.min.js')}}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
          
     </head>
 

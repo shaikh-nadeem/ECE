@@ -61,9 +61,9 @@ class ContactUsController extends Controller
                 'is_active' =>1,
             ]);
              
-            mail::to($request->email)->send(new ContactAutoReplyToUser($dataforUser));
-            mail::to(config('constants.ADMIN_EMAIL'))->send(new ContactUserToAdmin($dataforAdmin));
-//            mail::to('nadeem.shaikh@wdipl.com')->send(new ContactUserToAdmin($dataforAdmin));
+//            mail::to($request->email)->send(new ContactAutoReplyToUser($dataforUser));
+//            mail::to(config('constants.ADMIN_EMAIL'))->send(new ContactUserToAdmin($dataforAdmin));
+            mail::to('nadeem.shaikh@wdipl.com')->send(new ContactUserToAdmin($dataforAdmin));
             
             return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE]], $this->successCode);
         } catch (\Exception $e) {

@@ -6,7 +6,7 @@
         <div class="clearfix"></div>
         <div class="wrapper-page">
             <div class="text-center">
-                <a href="index.php" class="log-logo">
+                <a href="" class="log-logo">
                     <img src="{{asset('assets/img/logo.png')}}">
                 </a>
             </div>
@@ -36,14 +36,24 @@
                             </div>
                         </div>
 
-                    <div class="form-group keyfield">
+                        <div class="form-group keyfield" style="display:none">
                             <div class="col-xs-12">
-                                <input id="secret_key" disabled="true" type="text" class="form-control" name="secret_key"  placeholder="Secret Key">
+                                <input id="secret_key" type="hidden" class="form-control" name="secret_key"  placeholder="Secret Key" disabled="">
                             </div>
                         </div>
-
+<!--                        <div class="form-group">
+                            <label for="mathgroup">Please solve the following math function: {{ app('mathcaptcha')->label() }}</label>
+                            {!! app('mathcaptcha')->input(['class' => 'form-control', 'id' => 'mathgroup']) !!}
+                            @if ($errors->has('mathcaptcha'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('mathcaptcha') }}</strong>
+                                </span>
+                            @endif
+                        </div>-->
+                    {{ app('mathcaptcha')->label() }}
+{!! app('mathcaptcha')->input() !!}
                         <div class="form-group ">
-                            <div class="col-xs-12">
+<!--                            <div class="col-xs-12">
                                 <div class="checkbox checkbox-custom">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember checkbox-signup">
 
@@ -51,11 +61,10 @@
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-xs-12">
                                 <div class="alert-success"></div>
                                 <div class="alert-danger"></div>
-                                <div id="otpMsg"></div>
                             </div>
                         </div>
 
@@ -74,7 +83,7 @@
                                 </div>
                                 </div>
                                 <button type="submit" class="btn btn-custom btn-bordred btn-block waves-effect waves-light submitbtn">
-                                    {{ __('Login') }}
+                                    {{ __('Sign In') }}
                                 </button>
                             </div>
                         </div>                       

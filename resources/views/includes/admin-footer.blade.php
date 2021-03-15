@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        Copyright © Website Developers India. All rights reserved
+                        ECE Teacher All Rights Reserved
                     </div>
                 </div>
             </div>

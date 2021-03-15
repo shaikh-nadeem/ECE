@@ -1,6 +1,6 @@
 @extends('layouts.frontend-layout')
 @section('page_title')
-    {{ "Home page | "}}{{ config('app.name')}}
+    {{ "FAQ | "}}{{ config('app.name')}}
 @endsection
 @section('content')
 
