@@ -1,0 +1,1296 @@
+
+/*@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../font/helvetica/HelveticaNeueLTPro-Bd.woff2') format('woff2'),
+        url('../font/helvetica/HelveticaNeueLTPro-Bd.woff') format('woff');    
+        
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}*/
+@import url(https://db.onlinewebfonts.com/c/a64ff11d2c24584c767f6257e880dc65?family=Helvetica);
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../font/HelveticaNeueLTPro-Bd.woff2') format('woff2'),
+        url('../font/HelveticaNeueLTPro-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../font/HelveticaNeueLTPro-BdCn.woff2') format('woff2'),
+        url('../font/HelveticaNeueLTPro-BdCn.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Finger Paint';
+    src: url('../font/fingerpaint/FingerPaint-Regular.woff2') format('woff2'),
+        url('../font/fingerpaint/FingerPaint-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../font/HelveticaMedium.woff2') format('woff2'),
+        url('../font/HelveticaMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-size: 14px; 
+    color: #000;     
+    font-family: 'Helvetica Neue LT Pro' !important;
+    font-weight: normal;
+    font-style: normal;  
+    width: 100%;
+    overflow-x: hidden;
+}
+.top-header {
+    width: 100%;
+    background: #1b75bc;height: 200px
+}
+.Text p {
+    margin-bottom: 0;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    margin: 74px 0;
+    width: 100%;font-family: Arial;
+}
+.image img {
+    height: 200px;
+}
+.image {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.logo {
+    width: 160px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    border-radius: 0 50% 50% 0;
+    align-items: center;padding: 25px 25px 25px 0
+}
+.logo img {width: 130px;}
+.menu-bg{ background: #000;}
+.menu-item {font-weight: 600; background: #000;display: flex;justify-content: center;color: #fff; height: 45px; align-items: center;}
+.menu-item a {color: #fff;font-size: 16px;font-weight: normal;display: flex;width: 182px;font-family: 'Finger Paint';justify-content: center;align-items: end;}
+.menu-item a:hover {color: #fff !important;text-decoration: none;background-image: linear-gradient(to right, #1b75bc , #1c407d);border: 2px solid #fff;width: 182px;height: 45px;margin: 0;display: flex;align-items: center;justify-content: center;}
+.menu-item a.active {color: #fff !important; text-decoration: none; background-image: linear-gradient(to right, #1b75bc , #1c407d);border: 2px solid #fff; width: 182px;height: 45px;margin: 0; display: flex; align-items: center; justify-content: center;}
+nav.navbar {display: none;}
+.decision{position: relative;z-index: 9;padding: 35px;text-align: center}
+.decision h2 {font-size: 65px;font-weight: bold;color: #231f20;margin-bottom: 0;font-family: 'Helvetica Neue LT Pro';}
+.decision h4 {margin: 15px 0;font-weight: 600;font-size: 28px; font-family: 'Helvetica' !important;letter-spacing: 1px;margin-bottom: 17px; }
+.decision p {margin: 0;font-size: 20px; line-height: 1.5; font-family: "Helvetica";font-weight: 600;}
+.dec-img2 {height: 60%;width: 100%; position: relative; z-index: -1;}
+.dec-img3 {display: none;}
+.text p {font-size: 24px;font-weight: bold;padding: 10px 0;text-align: center;letter-spacing: 4px; font-family: 'Helvetica Neue LT Pro';}
+strong {font-weight: bolder; text-decoration: underline;}
+hr {border: 1px solid #000 !important; width: 100%;}
+.dec-img2 {height: 100%; width: 100%;}
+.Register-button {display: flex; padding: 10px 21px;border-radius: 5px; background-image: linear-gradient(to right, #1b75bc , #1c407d); border: none; color: #fff;border-radius: 6px !important;font-family: 'Finger Paint'!important;font-size: 25px !important;margin: 0 auto;width: 60%; justify-content: center;}
+.Register-butto:hover {background-image: linear-gradient(to right, #104772 , #142d58);border: none;}
+.Register-butto:focus {outline: none !important;}
+.Register-butto:hover:active {background-image: linear-gradient(to right, #1b75bc , #1c407d);}
+.profile {border: 2px solid #000; border-radius: 15px; height: 160px; width: 100%;margin: 0 auto;background: #FFF;display: flex;flex-direction: column;align-items: center;justify-content: center;}
+.profile img {display: flex; object-fit: contain; margin: 0 auto 5px; height: 90px;}
+.profile-image1 {width: 100%;margin: 0 auto !important;}
+.profile-image2 {display: none !important;}
+.profile a { text-align: center;display: flex;justify-content: center; color: #2366b6; text-decoration: none;font-family: arial;border: none;background: transparent;}
+.profile a:hover { color: #585757 ;text-decoration: none;}
+.profile a:focus {outline: none !important;}
+.more-profile {text-align: center;display: flex;width: 100%;justify-content: center;}
+.more-profile a { padding: 17px;color: #000;text-decoration: none;font-size: 17px;    font-family: arial;}
+.more-profile a:hover {color: #656363 !important; text-decoration: none;}
+.paid.ad {display: none;}
+.footer { background: radial-gradient( #1b75bc, #285cb3);}
+.footer ul {display: flex;justify-content: center; list-style: none; margin: 0 auto; padding: 0;}
+.footer li {padding: 10px 0;}
+.footer li a {color: #fff;padding: 0 20px;border-right: 1px solid #fff;    font-family: arial;}
+.footer li a:hover {color: #000;text-decoration: none;}
+.footer .container{max-width: 95% !important;}
+form .row{margin-bottom:12px;}
+input.form-control{padding: 0.60rem .75rem;background-color: #e6e7e8;border:none;color: #a7a9ac;letter-spacing: 3px;font-family: Helvetica;}
+input.form-control::-webkit-input-placeholder{color: #6e7378;font-family: Helvetica;}
+input.form-control:-ms-input-placeholder{color: #6e7378;font-family: Helvetica;}
+input.form-control::placeholder{color: #6e7378;font-family: Helvetica;}
+select.form-control{padding: 0 .75rem;height: 44px !important;color: #6e7378;letter-spacing: 3px;font-family: Helvetica;}
+form .button.contactBtn{float:right;}
+.button.contactBtn button{background-image:none !important;background-color:#b9d1ed;color:#231f20;padding: 8px 47px;border: none;border-radius: 9px;font-family: Helvetica;text-shadow: none;font-weight: normal; font-size: 16px; opacity: 1;width: 180px;height: 40px;display: flex;justify-content: center;align-items: center;}
+.secContact{padding: 0px 15px 0 15px;background-color: #f4f5f5}
+.secContact .loginRight{padding-top: 15px;padding-bottom: 15px;}
+.secContact .formHeader h4{    margin-bottom: 20px;}
+.contactRight{padding-top: 65px; padding-bottom: 50px; padding-right: 50px !important;}
+.contactLeft img{width: 100%}
+.contactLeft .imgText{position: absolute;bottom: 15px;left: 55%;transform: translateX(-50%);width: 35%;}
+.contactLeft .imgText p{font-weight: bold;color: #000;font-size: 18px;font-family: Helvetica;}
+
+select.form-control{-webkit-appearance: none;-moz-appearance: window;border: none;background-image: url(../img/selectArrow.svg);background-repeat: no-repeat;background-position: right center;background-size: 20px;background-position-x: calc(100% - 10px);background-color: #e6e7e8; font-family: Arial !important;font-family: Helvetica;}
+textarea.form-control{background-color: #e6e7e8;border: none; font-family: Helvetica;letter-spacing: 3px;height: 150px}
+.navFaq{display: flex;justify-content: space-between;margin-bottom: 15px !important}
+.navFaq .nav-item{width: 48%;}
+.navFaq .nav-item .nav-link{background: #e6e7e9;width: 100%;border-radius: 0;height: 100%;display: flex;justify-content: center;align-items: center; font-family: 'Helvetica' !important;font-weight: 500}
+.navFaq .nav-item .nav-link.active{font-weight: 500}
+/*.faqContent{height: 316px; overflow-y: auto; margin-bottom: 19px;}*/
+.faqContent::-webkit-scrollbar-track,
+.hireForm::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);border-radius:10px;background-color:#f5f5f5}
+.faqContent::-webkit-scrollbar,
+.hireForm::-webkit-scrollbar{width:5px;background-color:#f5f5f5}
+.faqContent::-webkit-scrollbar-thumb,
+.hireForm::-webkit-scrollbar-thumb{border-radius:10px;-webkit-box-shadow:inset 0 0 6px rgba(0,0,0,.3);background-color:#555}
+.faqLeft{background: url(../img/contactImg.jpg) no-repeat;position: relative;background-position: center;background-size: contain;}
+.faqLeft .imgText{position: absolute;bottom: 15px;left: 50%;transform: translateX(-50%);}
+.faqLeft .imgText p{font-weight: bold;color: #000;font-size: 18px; width: 174px;font-family: Helvetica;}
+.card-header i.fa.fa-caret-down {font-size: 27px; color: #808285;}
+.faqContent .card {margin: 10px 0;}
+.btn-link:hover{text-decoration: none;}
+.faqContent .card{}
+.faqContent .card .card-header{border-radius: 0;padding: 0;}
+.faqContent .card .card-header h5{width: 100%;height: 100%; margin: 0}
+.faqContent .card .card-header button{width: 100%;text-align: left;border: none;padding: 6px 15px !important;display: flex;justify-content: space-between;align-items: center; letter-spacing: 2px;color: #a7a9ac !important;white-space: initial;}
+.faqContent .card .card-header button img{transition: all 0.2s;width: 20px;  -webkit-transform: rotate( 360deg); transform: rotate( 360deg);position: absolute;top: 15px;right: 15px;}
+.faqContent .card .card-header button[aria-expanded="true"] img{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.faqRight{padding-top: 35px; padding-bottom: 35px; padding-right: 50px !important;}
+button.btn.btn-link.collapsed:focus {text-decoration: none;}
+.footer li:last-child a {border-right: 0;}
+button.btn.btn-link:focus {text-decoration: none !important;}
+#accordion {display: block;}
+/*    .data{display: none !important;}*/
+.secBanner{border: 2px solid #000;margin-top: 20px;background: #eeeff0;position: relative;background: linear-gradient(270deg, rgb(225 225 225) 0%, rgba(255,255,255,1) 100%); background: rgb(243,243,243);background: linear-gradient(270deg, rgb(229 229 229) 20%, rgb(255 255 255) 90%);}
+.register-now{position: absolute;bottom: 0;width: 100%;left: 15px}
+.registerBtnBox{text-align: center;margin-top: 30px}
+.form-group a {font-family: 'Helvetica';}
+.form-group p {font-family: 'Helvetica';}
+.secTopBanner{align-items: center}
+.secTopBanner .text{position: absolute;bottom: 0;   width: 100%;right: 55px;}
+.error-img {display: flex;align-items: center;justify-content: center; flex-direction: column;}
+.data {display: flex; justify-content: center; background: #f1f1f1; height: 300px; align-items: center; margin-bottom: 20px;}
+.data p {text-align: center; font-size: 18px;}
+.error-img img {align-items: center;height: 59px;}
+.secTopBanner{}
+.secTopBanner img{position: relative;left: -40px}
+.secHire .contactLeft .imgText,.secLogin .contactLeft .imgText{width: 40%;}
+.secHire h6{font-family:'Helvetica'; }
+.modal-title{width: 100%;text-align: center; font-size: 1.5rem; font-family:'Helvetica';}
+.modal-body p{ font-family:'Helvetica';}
+.close span:focus { outline: none !important;}
+.button.contactBtn:focus { outline: none !important;}
+.close:focus {outline: none !important;}
+.navbar-toggler:focus {outline: none !important;}
+.registerBtnBox:focus {outline: none !important;}
+.wrapper{min-height: calc(100vh - 284px)}
+.secLogin,.secFaqs,.secHire{height: 100%;padding: 0px 15px 0 15px;background-color: #f4f5f5}
+.loginRight{padding-right: 50px !important; margin: auto;}
+.list-group.help-group {margin-bottom: 20px;padding-left: 0;margin: 0;}
+.faq-list {display: flex;top: auto; margin: 0 0 32px;border-radius: 2px;border: 1px solid #ddd; box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);}
+.secFaq{position: relative; display: flex;margin: 0;padding: 13px 16px;background-color: #fff;border: 0;border-bottom: 1px solid #ddd;border-top-left-radius: 2px;border-top-right-radius: 2px; color: #616161;transition: background-color .2s;}
+i.mdi {margin-right: 5px;font-size: 18px;position: relative;top: 2px;}
+&:hover {background-color: #f6f6f6;}
+&.active {background-color: #f6f6f6; font-weight: 700;color: rgba(0,0,0,.87);   }
+&:last-of-type {border-bottom-left-radius: 2px;border-bottom-right-radius: 2px;border-bottom: 0;}
+tab-content.panels-faq {padding: 0; border: 0;}
+.panel.panel-help {overflow: hidden; background-color: #fff; margin: 0 0 16px;}
+.panel-heading h2 {font-size: 15px;width: 100%; padding: 0 20px; text-decoration: none;}
+.panel-heading {height: 43px;background: #dddddd; width: 471px;color: #9f9d9d;display: flex; align-items: center;}
+.tab-content.panels-faq { width: 450px;}
+.faq { width: 100%;height: 100%;overflow: hidden;background: #f4f6f6;}
+a.list-group-item.active {background-image: linear-gradient(to right, #1b75bc , #1c407d);color: #fff;border-radius: 0;}
+a.list-group-item { margin: 20px;width: 163px;font-size: 19px; font-weight: 600; height: 40px;  display: flex;align-items: center;justify-content: center;background: #dddddd; border: none; border-radius: 0 !important;color: #000;}
+a.list-group-item.active:hover {background-image: linear-gradient(to right, #1b75bc , #1c407d); border-radius: 0;color:#fff;}
+a.list-group-item:hover { background-image: linear-gradient(to right, #1b75bc , #1c407d); border-radius: 0; color: #fff;}
+ul.list-group.help-group {width: fit-content; margin-top: 67px;}
+.faq-list.list-group.nav.nav-tabs { display: flex;flex-flow: nowrap;}
+.nav-link {display: block;padding: .5rem 1rem;color: #000;font-size: 16px; font-weight: 500;}
+.nav-pills .nav-link.active {border-radius: 0;background: linear-gradient(to right, #1b75bc , #1c407d);font-weight: 600; font-family: Helvetica;}
+a:hover{ text-decoration: none !important;color: #000 !important;}
+.panel-body {padding: 10px;}
+.panel {box-shadow: none;border-radius: 0;}
+.left { background: #b9d0ed;border-radius: 10px;text-align: center;color: #000;text-decoration: none;padding: 0;margin: 0 auto;width: 100%;height: 55px;line-height: 1.1;font-family: Helvetica;    display: flex;justify-content: center;align-items: center;flex-direction: column;margin-top: 15px}
+.left p {font-size: 18px;font-weight: normal;margin: 0;}
+.dec-img4 {position: relative;}
+.dec-img4 p { position: absolute; bottom: 57px;left: 135px;font-size: 17px;font-weight: 700;}
+.left a {color: #000;font-size: 18px;text-decoration: none;}
+.left a:hover {text-decoration: none; color: #2366b7 !important ;}
+.dec-img4 {background: url(http://dev.betadelivery.com/ECE/img/img-4.png); background-position: left top; background-size: auto; background-repeat: no-repeat;}
+.tab-pane {display: none;}
+.pannel-heading .rotate-icon{ -webkit-transform: rotate(180deg);transform: rotate(180deg);}
+.pannel-heading .fa-angle-down{ float: right;}
+.fa-angle-down:before {content: "\f107";}
+.btn { font-size: 18px !important;background: transparent;color: #b1b1b1; font-family: sans-serif !important;}
+.btn-link:hover { background: transparent;}
+.card .card-header {background: #e6e7e8;min-height: 40px;display: flex; align-items: center; border-bottom: none;}
+.card .card-body {padding: 15px; text-align: left; font-family: Helvetica;}
+.btn-link:hover {text-decoration: none !important;margin: 0 !important; padding: 0 !important;}
+.btn-link {padding: 0 !important;margin: 0 !important; color: #5f5f5f !important;}
+.accordion .card {border: none; border-radius: 0;box-shadow: none;padding: 10px;background: transparent;margin: 10px;}
+.collapse.show {display: block;background: #fff;}
+.nav-pills .nav-link.active {border-radius: 0; background: linear-gradient(to right, #1b75bc , #1c407d); font-family: 'Helvetica Neue LT Pro'; color: #fff !important;}
+.form-group{position: relative}
+.form-control+label{position: absolute;bottom: 0}
+.mob-line {display: none;}
+.form-control:focus {box-shadow: none !important; }
+.form-group:focus {outline: none !important;}
+.contactBtn button:focus {outline: none !important;}
+.close:focus, .close:hover { text-decoration: none; opacity: 1 !important;}
+.topHeader{background: url(../img/img-1.png) no-repeat;background-position: right bottom;background-size: contain;background-color: #1b75bc;display: flex;justify-content: space-between;align-items: center;height: 200px;}
+.topHeaderRight{width: 200px}
+.headerText p{font-size: 32px;color: #fff;text-align: center;font-family: Arial;margin: 0}
+.form-group {margin-bottom: 20px !important;}
+.formHeading{margin-bottom:8px;}
+.formHeading h6{margin-bottom: 0;font-family: 'Helvetica';letter-spacing: 2px;padding: 3px 10px;font-weight:600;height: 24px !important;font-size: 14px}
+.formHeading{background-color: #bad1ed; padding: 2px;}
+.hireForm .form-control{letter-spacing:0;font-family: Helvetica;border-radius:0;height: 30px !important;font-size: 14px}
+.hireForm .form-group{margin-bottom: 0.2rem !important;}
+.loginBtn{float:right;}
+/*.hireForm{height: 430px;overflow-y: auto;padding-right: 10px}*/
+.hireFormwrapper{margin-bottom: 10px;}  
+section,hr{width: 100%}
+.formHeader{text-align: center;margin-bottom: 20px;}
+.formHeader h4{font-family: Helvetica;font-weight: bold;margin: 0;letter-spacing: 1px;margin-bottom: 40px;color: #2269b8}
+.formHeader p{font-family: Helvetica;margin-top: 20px;margin-bottom: 40px;}
+.textForgot{}
+.formHeader a { color: #2167b7;text-decoration: none;font-weight: normal;}
+.footer ul {display: flex; justify-content: center; list-style: none; margin: 0 auto; padding: 0;border-bottom: 2px solid #fff;}
+.footer p { text-align: center; color: #fff; font-family: 'Arial';letter-spacing: 0px; font-weight: 300;margin: 0;padding: 10px 0;}
+.secFaqs,.secHire{background: url(../img/contactImg.jpg) no-repeat;background-position: left bottom;background-size: 52%;background-color: #f4f5f5;background-position-x: 5px;}
+.secFaqs .contactLeft img,.secHire .contactLeft img{opacity: 0}
+.hireRight{padding: 25px 0;}
+.modal-body{padding: 20px!important}
+.modal-header .close{position: absolute;right: 0;top: 0;margin: 0!important}
+.select_user a{width: 100%;background: #b9d1ed;height: 50px;border-radius: 8px;text-align: center;align-items: center;display: flex;justify-content: space-between;padding: 0 15px;color: #000;transition: all .2s ease-in-out;font-family: Helvetica;}
+.select_user a:first-child{margin-bottom: 20px;}
+.select_user a i{margin-left: 5px }
+.select_user a:hover,.select_user a:focus{background: #2269b8;color: #FFF !important;}
+.secTerm {font-family:arial;color: #000;padding: 30px 50px;background-color: #f4f5f5;}
+.secTerm h2 { font-size: 15px; font-weight: bold; text-decoration: underline;}
+.secTerm .content {padding-top: 30px;}
+.secTerm .content h3 {font-size: 14px;font-weight: bolder;margin-bottom: 15px}
+.secTerm .content ul{margin-bottom: 30px}
+.secTerm .content li {margin: 0 auto; display: block;font-weight: 500;font-size: 14px;}
+.secTerm .content li p{margin-bottom: 0}
+.secTerm .content span.number {padding-right: 15px; font-style: normal;font-weight: 600;margin-bottom: 0}
+.secTerm .content span {font-style: italic; font-size: 13px; font-weight: 500;margin-bottom: 10px;display: block;}
+.secTerm .content span.tab {width: 160px;  display: inline-block;font-size: 13px; font-style: normal;margin-bottom: 0}
+.secTerm .content h5 { font-size: 14px;}
+.secTerm .content dd {margin-left: 25px;}
+.secTerm .content p{font-style:normal;font-size: 14px; display: flex;}
+.secHire .button.contactBtn button{margin-top: 15px}
+.mb-img img { display: none;}
+.headerText p br {display: none;}
+/*    Added sadhana*/ 
+/* @media (max-width:3166px){
+    .secFaqs>div{align-items: center;}
+    .navFaq .nav-item .nav-link { height: 83px;font-size: 30px;}
+    .card .card-header {height: 90px;}
+    .card .card-body { padding: 25px;font-size: 27px;}
+    .card-header .btn-link {font-size: 31px !important;}
+    .faqContent .card .card-header button img{width: 40px;}
+    .left {height: 100px;}
+    .left a{font-size: 34px; margin-top: 5px;}
+    .left p{font-size: 34px;}
+    .faqContent .card {margin: 35px 0;}
+    .card .card-header {height: 80px !important;}
+    .menu-item a{width: 350px;font-size: 30px;}
+    .menu-item{height: 80px;}
+    .menu-item a:hover { width: 350px;height: 80px;}
+    .menu-item a.active{height: 80px; width: 350px;}
+    .headerText p{font-size: 41px;}
+    .contactLeft .imgText p, .formHeader p { font-size: 45px ; width: 81%;display: flex;}
+    .contactLeft .imgText {bottom: 134px;left: 56%;}
+    .footer li a{font-size: 31px; padding: 0 30px;}
+    .footer li {padding: 25px 0; }
+    }*/
+/*    @media (min-width:2374px){
+          .menu-item {height: 60px;}
+          .menu-item a {width: 270px; font-size: 27px;}
+          .menu-item a:hover { width: 270px;height: 60px;}
+          .menu-item a.active{height: 60px; width: 270px;}
+          .navFaq .nav-item .nav-link {height: 65px; }
+          .card .card-body { padding: 25px;font-size: 22px;}
+          .card .card-header {height: 57px !important;}
+          .faqContent .card .card-header button img {width: 33px;}
+          .card-header .btn-link {font-size: 28px !important;}
+          .left {height: 80px;}
+          .left p {font-size: 29px; margin: 0;}
+          .left a {font-size: 29px; margin: 0;}
+          .faqContent .card {margin: 30px 0;}
+          .contactLeft .imgText p, .formHeader p {font-size: 36px !important;width: 88%;}
+          .contactLeft .imgText {bottom: 110px; left: 56%;}
+          .footer li a {font-size: 25px;}
+          .footer li {padding: 10px 0;}
+      }*/
+    @media (min-width:2374px){
+    .secTopBanner .text {right: 30px;}
+    .more-profile {margin-top: 0 !important;}
+    .footer ul{border-bottom: 5px solid #fff; width: 460px;}
+    .footer li a {font-size: 16px;}
+    .profile img {height: 105px;}
+    .profile a {font-size: 20px;}
+    }
+    @media (min-width:2301px) {
+        .secTopBanner .col-xl-7,.secTopBanner .col-xl-5,
+        .register-now .col-xl-7,.register-now .col-xl-5{max-width: 50%;min-width: 50%;}
+        .decision h2{font-size: 85px}
+        .decision h4{font-size: 35px}
+        .decision p{font-size: 24px}
+        .secTopBanner img{left: 0}
+        input.form-control, .button.contactBtn button,select.form-control{height: 66px !important;}
+        .formHeader h4{font-size: 38px;}
+        .contactLeft .imgText p,.formHeader p{font-size: 30px;}
+        .textForgot{font-size: 20px}
+        .form-group {margin-bottom: 30px !important;}
+        .card .card-header{min-height: 65px}        
+        .secFaqs>div{align-items: center !important}
+    }
+    @media (min-width:2001px) {
+        .contactRight{height: 85vh;}
+        input.form-control,.secLogin .button.contactBtn button,.secContact .button.contactBtn button,select.form-control{height: 55px!important;}
+        .formHeader h4 {font-size: 36px;}
+        textarea.form-control{height: 160px;}
+        .contactLeft .imgText p{font-size: 22px}
+        .wrapper{background: #f4f5f5;padding-top: 12vh}
+        .faqContent{height: auto}
+        .secHire>div{align-items: flex-end !important}
+        .hireForm{height: auto;}
+        .decision{padding: 50px 100px;}
+        .decision h2{font-size: 70px}        
+        .decision h4{margin: 25px 0;line-height: 1.5;}
+        .decision p{line-height: 1.7}
+        .profile{height: 230px;}
+        .more-profile{margin-top: 20px}
+        .more-profile a{font-size: 22px}
+        .wrapper{padding-top: 0;}
+        .formHeader h4{font-size: 45px;}
+        .button.contactBtn button{font-size: 19px;}
+        .contactLeft .imgText p,.formHeader p{font-size: 25px;}
+        .formHeading{ height: 38px;display: flex;align-items: center;}
+        .navFaq .nav-item .nav-link{height: 55px;font-size: 25px;}
+        .textForgot{font-size: 20px}
+        .form-group {margin-bottom: 20px !important;}
+        .card .card-header{min-height: 52px;}
+        .card .card-body{padding: 25px}
+        .faqContent .card{margin: 15px 0}
+        .secFaqs,.secHire{background-size: 50%}
+        .contactLeft .imgText{bottom: 50px;left: 53%;}
+        .faqContent .card .card-header button img{top: 20px}
+        .hireForm .form-control{height: 37px !important;}
+    }
+    @media (min-width:2698px) {
+        .card .card-header {min-height: 60px;}
+        .faqContent .card .card-header button img{top: 25px}
+        .navFaq .nav-item .nav-link{height: 65px}
+        .left{height: 60px}
+        .contactLeft .imgText p, .formHeader p{font-size: 32px}
+        .contactLeft .imgText{bottom: 100px;left: 53%;}
+        input.form-control, .button.contactBtn button, select.form-control{height: 65px !important}
+        .formHeader h4 {font-size: 50px;}
+    }
+    @media (max-width:2698px) and (min-width:2024px) {
+        
+    }
+    @media (max-width:2023px) and (min-width:1798px) {
+        
+    }
+    @media (max-width:2000px) and (min-width:1921px) {
+        .secTopBanner .col-xl-7{max-width: 55%;}
+        .decision h4{padding-right: 80px}
+        .faqContent,.hireForm{height: 465px;}
+        input.form-control,.button.contactBtn button,select.form-control{height: 50px !important}
+        .formHeader h4{}
+        .contactLeft .imgText p{}
+    }
+    @media (max-width:1920px) and (min-width:1601px) {
+        .decision h2{font-size: 77px; margin-bottom: 17px;}
+        .text p{font-size: 30px}
+        .decision h4{font-size: 27px}
+        .decision p{font-size: 22px;}
+        .text p{font-size: 25px}
+        .secTopBanner .col-xl-7{}
+        .secContact{min-height: 65vh;}
+        .secFaqs,.secHire{background-size: 50%;}
+        .faqContent{height: auto;}
+        .hireForm{height: 495px;}
+        .contactRight{height: 71vh;}
+        input.form-control,.secLogin .button.contactBtn button,.secContact .button.contactBtn button,select.form-control{height: 55px !important;}
+        .card .card-header{min-height: 55px}
+        .faqContent .card .card-header button img{top: 22px}
+        .formHeader h4{font-size: 30px;}
+        .contactLeft .imgText p{font-size: 20px}
+        .navFaq .nav-item .nav-link{height: 55px;}
+        .contactLeft .imgText{bottom: 30px;left: 52%;}
+    }
+    @media (min-width:1686px) {
+        
+    }
+    @media (max-width:1600px) and (min-width:1367px) {
+        .decision h2{font-size: 65px}
+        .text p{font-size: 20px}
+        .decision h4{font-size: 28px}
+        .decision p{font-size: 20px;}
+        .text p{font-size: 22px}
+        .secContact{min-height: 65vh;}
+        input.form-control,.button.contactBtn button{height: 50px; outline: 0;}
+    }
+    @media (max-width:1500px) {
+        .decision h2 {font-size: 60px;}
+        .decision{padding: 25px 35px;}
+        .text p{position: relative;font-size: 16px;}
+    }
+    @media (max-width:1367px) and (min-width:1000px){
+        .wrapper{display: flex;align-items: flex-end;flex-direction: column}
+        .wrapper .secLogin{width: 100%;}
+/*        .secFaqs{height: 740px;}*/
+        .secFaqs>div,.secHire>div{height: 100%}
+    }
+    @media(min-width:1367px){
+        .wrapper{background: #f4f5f5;}
+    }
+    @media (max-width:1366px){
+        .decision h2{font-size: 54px}
+        .text p{font-size: 20px}
+        .decision h4{font-size: 25px}
+        .decision p{font-size: 18px;}
+        .text p{font-size: 17px}
+        .container{max-width: 70%!important;} 
+    }
+    @media(min-width:1200px){
+        .container{ max-width: 70%!important;} 
+    }
+/*Ended*/  
+    @media only screen and (max-width: 1024px){
+        .decision h2 {font-size: 35px;}
+        .decision h4{width: 63%;}
+        .decision p {width: 50%;}
+        .container{max-width: 90%!important;}
+        .menu-item a { margin: 0 30px;}
+        .text p {font-size: 20px; letter-spacing: 3px;}
+        .decision p,.decision h4{width: 100%}
+    }
+    @media only screen and (max-width: 991px){
+        .secTerm{padding: 30px 15px;}
+        .secTerm .content ul{padding-left: 15px}
+        .secTerm .content span.tab{min-width: 120px;width: 120px;}
+        .secTopBanner .text{position: relative;right: 0}
+        .secFaqs .contactLeft img,.secHire .contactLeft img{opacity: 1}
+        .secFaqs,.secHire{background: none}
+        .formHeader h4,.formHeader p{text-align: center; margin: 15px auto!important; justify-content: center;}
+        .hireForm,.faqContent{height: auto;padding: 0}
+        .left{padding: 10px 0;height: auto}
+        .headerText p{text-align: left;    margin-left: 20px;}
+        .container{padding: 0 !important}
+        .register-now{position: relative}
+        .secBanner{margin: 0;border: none;background: transparent}
+        .secTopBanner{background: #FFF}
+        .secTopBanner img{left: 0;width: 100%; display: none;}
+        .container{padding: 0}
+        .wrapper{height: auto}
+        .loginRight{padding-right: 15px !important;}
+        .faqRight{padding-right: 15px !important;}
+        .contactRight{padding-right: 0;}
+        .top-header {width: 100%; overflow: hidden; height: 105px;}
+        .image {display: flex; justify-content: flex-end;margin-top: 0;}
+        .image img {height: 106px;}
+        .Text {margin: 15px 0;}
+        .Text p {font-size: 22px;margin: 0; position: absolute;z-index: 1; width: 100%;left: 99px;top: 40px;}
+        .menu-bg { background: transparent;height: 0;}
+        .menu-item {display: none;}
+        .navbar-light .navbar-toggler {
+            background: transparent;
+            display: flex;
+            border: none;padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9;
+        }
+        .navbar-light .navbar-toggler[aria-expanded="true"] span{
+            background-image: url(../img/close.svg)!important;
+            height:20px;margin-top: 5px
+        }
+        nav.navbar {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav.navbar.bg-light {
+            background-color: transparent !important;
+            display: flex;
+            justify-content: flex-end;
+                z-index: 9;padding: 0
+        }
+        .navbar-collapse{   
+            background: #fff!important;box-shadow: 0px 2px 10px rgba(22, 20, 21, 0.52);
+        }
+        .navbar-light .navbar-toggler-icon {
+            background-image: url(../img/menu.svg)!important;
+        }
+        ul.navbar-nav a {
+            font-family: 'Finger Paint';
+            position: relative;
+            text-align: center;
+            font-size: 17px;
+        }
+        a.nav-link:hover {
+            background: #dddddd;
+            color: #000!important;
+            font-family: 'Finger Paint';
+            box-shadow: none;
+            padding: 13px!important;
+            margin: 0;
+        }
+        .navbar-nav .nav-link:focus {
+            outline: none !important;
+        }
+        a.nav-link{
+            padding: 13px!important;
+        }
+        .navbar-nav a {
+            color: #000 !important;
+        }
+        .navbar-light .navbar-toggler:hover {
+            background: transparent;
+            
+        }
+        .collapse.show {
+            display: block;
+            z-index: 1;
+            text-align: center;
+        }
+        .container {
+            min-width: 100%;
+            padding:0;
+        }
+        .decision {
+            padding:20px;
+        }
+        .more-profile{margin: 15px 0 25px}
+        .decision h2 {
+           font-size: 50px;
+        }
+        .decision p {
+            font-size: 18px;
+            width: 100%;padding: 0
+        }
+        .decision h4 {
+            font-size: 25px;
+            width: 100%;padding: 0
+        }
+        .registerBtnBox{padding: 0}
+        .decision-img {
+            text-align: center;
+            border: none;
+            margin-top: 0;
+            height: 100%;
+        }
+        .dec-img3 {
+            display: block
+        }
+        .dec-img2 {display: none;}
+        .text p {
+            font-size: 25px;
+            padding: 0;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .button {padding-left: 0;}
+        button {font-size: 25px !important;padding: 13px 44px;}
+        .profile {
+            width: 65%;
+            height: 200px;
+            padding: 10px;
+            margin: 50px auto;
+        }
+        .profile img {
+            object-fit: contain;
+            width: 100%;
+            height: 150px;
+        }
+        .profile a {font-size: 20px; font-weight: 500;}
+        .more-profile a {font-size: 20px; font-weight: 500;}
+        .hr {
+            margin-top: 25px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        hr {
+            width: 100%;
+            border: 1px solid rgb(27 113 184)!important;
+        }
+        .more-profile a{padding: 0 17px;}
+        .profile-image1 {display: none !important;}
+        .profile-image2 {height: 100%;display: flex !important;}
+        .paid.ad {
+            width: 90%;
+            height: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-radius: 15px;
+        }
+        .paid.ad a {
+            color: #000;
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            align-items: center;
+            height: 175px;
+        }
+        .footer {width: 100%;}
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 0
+        }
+        .footer li a {
+            color: #fff;
+            padding: 0 20px;
+            border-right: none;
+            font-size: 16px;
+        }
+        .footer li {
+            padding: 8px 0;
+            display: inline-block;
+        }
+        .footer{height: auto}
+        .contactLeft{padding: 0}
+        .contactLeft .imgText{bottom: 35px;left: 50%;}
+        .contactLeft .imgText p{font-size: 30px;}
+    }
+    @media only screen and (max-width: 768px) {
+       
+        .contactRight{
+            padding-right: 0;
+        }
+        .top-header {
+            width: 100%;
+            overflow: hidden;
+            height: 105px;
+        }
+        .image {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 0;
+        }
+        .image img {
+           height: 106px;
+        }
+        .Text {
+            margin: 15px 0;
+        }
+        .Text p {
+            font-size: 22px;
+            margin: 0;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            left: 99px;
+            top: 40px;
+        }
+        .menu-bg {
+            background: transparent;
+            height: 0;
+        }
+        .menu-item {
+            display: none;
+        }
+        .navbar-light .navbar-toggler {
+            background: transparent;
+            display: flex;
+            border: none;    padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9;
+        }
+        .navbar-light .navbar-toggler[aria-expanded="true"] span{
+            background-image: url(../img/close.svg)!important;
+            height:20px;
+        }
+        nav.navbar {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav.navbar.bg-light {
+            background-color: transparent !important;
+            display: flex;
+            justify-content: flex-end;
+                z-index: 9;
+        }
+        .navbar-collapse{   
+            background: #fff!important;
+        }
+        .navbar-light .navbar-toggler-icon {
+            background-image: url(../img/menu.svg)!important;
+        }
+        ul.navbar-nav a {
+            font-family: 'Finger Paint';
+            position: relative;
+            text-align: center;
+            font-size: 17px;
+        }
+        a.nav-link:hover {
+            background: #dddddd;
+            color: #000!important;
+            font-family: 'Finger Paint';
+            box-shadow: none;
+            padding: 13px!important;
+            margin: 0;
+        }
+        .navbar-nav .nav-link:focus {
+            outline: none !important;
+        }
+        a.nav-link{
+            padding: 13px!important;
+        }
+        .navbar-nav a {
+            color: #000 !important;
+        }
+        .navbar-light .navbar-toggler:hover {
+            background: transparent;
+        }
+        .collapse.show {
+            display: block;
+            z-index: 1;
+            text-align: center;
+        }
+        .container {
+            min-width: 100%;
+            padding:0;
+        }
+        .decision h2 {
+           font-size: 50px;
+        }
+       
+        .decision-img {
+            text-align: center;
+            border: none;
+            margin-top: 0;
+            height: 100%;
+        }
+
+        .dec-img2 {
+            display: none;
+        }
+        .text p {
+            font-size: 25px;
+            padding: 0;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .button {
+            padding-left: 0;
+        }
+        button {
+            font-size: 25px !important;
+            padding: 13px 44px;
+        }
+        .profile {
+            width: 65%;
+            height: 200px;
+            padding: 10px;
+            margin: 50px auto;
+        }
+        .profile img {
+            object-fit: contain;
+            width: 100%;
+            height: 150px;
+        }
+        .profile a {
+            font-size: 18px !important;
+            font-weight: 500;
+            margin-top: 0;
+        }
+        .more-profile a {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .hr {
+            margin-top: 25px;
+            width: 90%;;
+            margin: 0 auto;
+        }
+        hr {
+            width: 100%;
+            border: 1px solid rgb(27 113 184)!important;
+        }
+        .more-profile a{
+            padding: 0 17px;
+        }
+        .profile-image1 {
+            display: none !important;
+        }
+        .profile-image2 {
+            height: 100%;
+            display: flex !important;
+        }
+        .paid.ad {
+            width: 85%;
+            height: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-radius: 15px;
+            display: block;
+        }
+        .paid.ad a {
+            color: #000;
+            display: flex;
+            justify-content: center;
+            font-size: 15px;
+            align-items: center;
+            height: 175px;
+        }
+        .footer {
+            width: 100%;
+        }
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 0
+        }
+        .footer li a {
+            color: #fff;
+            padding: 0 20px;
+            border-right: none;
+            font-size: 16px;
+        }
+        .footer li {
+            padding: 8px 0;
+            display: inline-block;
+        }
+        .faqContent,.hireForm{
+            height: auto;
+        }
+    }
+    @media only screen and (max-width: 767px) {
+        .mb-img img { height: 130px;display: block;float: right;margin-right: 89px;}
+        .secFaqs .contactLeft .imgText{width: 50%}
+        .contactLeft .imgText{width: 100%}
+        .formHeader h4{font-size: 20px}
+        .secHire .contactLeft .imgText, .secLogin .contactLeft .imgText{width: 55%;}
+        .hr.w-100{width: 90%!important}
+        .text p br {display: none;}
+        .text p{right: 0}
+        .faqRight{padding-top: 30px;padding-bottom: 30px}
+        .mob-line {display: block !important;}
+        .contactLeft img {height: auto !important}
+        .button.contactBtn button{font-size: 16px !important;}
+        .hireForm .form-control,.formHeading h6{height: 34px !important;}
+        .formHeading h6{height: 24px !important;}
+        .secHire .button.contactBtn button{margin-top: 0}
+        .secBanner {
+            border: none;
+            margin-top: 0;
+        }
+
+        select.form-control{
+            letter-spacing: 1.5px;
+        }
+        .faqLeft {
+            background-size: cover;
+            height: 514px
+        }
+        .faqRight{
+            padding-right: 15px !important;
+        }
+        .contactRight{
+            padding-right: 0;
+        }
+        html {
+            overflow-x: hidden;
+        }
+        body {
+            overflow-x: hidden;
+        }
+        header .container {
+            padding: 0;
+        }
+        .top-header {
+            width: 100%;
+            overflow: hidden;
+            height: 99px;
+        }
+        .image {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -29%;
+        }
+        .image img {
+            height: 103px;
+        }
+        .Text {
+            margin: 15px 0;
+        }
+        .Text p {
+            font-size: 21px;
+            margin: 0;
+            position: absolute;
+            z-index: 1;
+            width: 55%;
+            left: 99px;
+            top: -65px;
+        }
+        .menu-bg {
+            background: transparent;
+            height: 0;
+        }
+        .menu-item {
+            display: none;
+        }
+        span.navbar-toggler-icon:focus {
+            outline: none !important;
+        }
+        .navbar-light .navbar-toggler {
+            background: transparent;
+            display: flex;
+            border: none;
+            padding: 0;
+        }
+        .navbar-light .navbar-toggler[aria-expanded="true"] span{
+            background-image: url(../img/close.svg)!important;
+            height: 20px;
+        }
+        nav.navbar {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav.navbar.bg-light {
+            background-color: transparent !important;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 9;
+        }
+        .navbar-collapse{   
+            background: #fff!important;
+        }
+        .navbar-light .navbar-toggler-icon {
+            background-image: url(../img/menu.svg)!important;
+        }
+        ul.navbar-nav a {
+            font-family: 'Finger Paint';
+            position: relative;
+            text-align: center;
+        }
+        a.nav-link:hover {
+            background: #dddddd;
+            color: #000!important;
+            font-family: 'Finger Paint';
+            box-shadow: none;
+            padding: 13px!important;
+            margin: 0;
+        }
+        .navbar-nav .nav-link:focus {
+            outline: none !important;
+        }
+        a.nav-link{
+            padding: 13px!important;
+        }
+        .navbar-nav a {
+            color: #000 !important;
+        }
+        .navbar-light .navbar-toggler:hover {
+            background: transparent;
+        }
+        .collapse.show {
+            display: block;
+            z-index: 1;
+            text-align: center;
+        }
+        .container {
+            min-width: 100%;
+            padding: 0 !important;
+        }
+        .decision {
+            padding:  20px; padding-bottom: 10px;
+        }
+        .decision h2 {
+           font-size: 48px;
+        }
+        .decision p {
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            padding: 0;
+        }
+        .decision h4 {
+            font-size: 22px;
+            width: 100%;
+            padding: 0;
+            text-align: center;
+        }
+        .decision-img {
+            text-align: center;
+            border: none;
+            margin-top: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+        .dec-img2 {
+            display: none;
+        }
+        .text p {
+            font-size: 25px;
+            padding: 0;
+            margin: 15px 0;
+            text-align: center;
+            letter-spacing: 3px;
+            font-family: 'Helvetica Neue LT Pro';
+        }
+        .button {
+            padding-left: 0;
+        }
+        .registerBtnBox {
+            padding-right: 0;
+            text-align: center;
+            width: 81%;
+            display: flex;
+            margin: 30px auto 0;
+        }
+        .Register-button {
+            width: 100%;
+            margin-top: 0 !important;
+        }
+        .profile {
+            width: 65%;
+            height: 200px;
+            padding: 10px;
+            margin: 40px auto;
+        }
+        .profile img {
+            object-fit: contain;
+            width: 100%;
+            height: 150px;
+        }
+        .profile a {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .more-profile a {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .hr {
+            margin-top: 25px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        hr {
+            width: 100%;
+            border: 1px solid rgb(27 113 184)!important;
+            margin: 0 !important;
+        }
+        .more-profile a{
+            padding: 0 17px;
+        }
+        .profile-image1 {
+            display: none !important;
+        }
+        .profile-image2 {
+            height: 100%;
+            display: block !important;
+        }
+        .paid.ad {
+            width: 90%;
+            height: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            border: 1px solid #000;
+            border-radius: 15px;
+            display: block;
+        }
+        .paid.ad a {
+            color: #000;
+            display: flex;
+            justify-content: center;
+            font-size: 18px;
+            align-items: center;
+            height: 175px;
+            font-family: 'Helvetica';
+        }
+        .footer {
+            width: 100%;
+        }
+        .footer ul {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10px 0;
+            align-items: center;
+            width: 100%;
+        }
+        .footer li {
+            padding: 8px 0;
+            display: inline-block;
+        }
+        .faqContent,.hireForm{
+            height: auto;
+        }
+        
+        .mb-img {
+            display: block;
+        } 
+    }
+    @media only screen and (max-width: 575px){
+        mb-img{display: block;}
+        .topHeader.hide {background-image: none;}
+        .headerText {margin-top: -15px;}
+        .button.contactBtn button{padding-left: 0;padding-right: 0;display: flex;justify-content: center;align-items: center}
+        .loginRight{padding-bottom: 1rem}
+        .headerText{margin-top: 28px}
+        .topHeader{height: 130px;}
+        .logo img{width: 70px; margin-left: 5px;}
+        .logo{width: 120px;padding: 25px 20px 25px 0; }
+        .headerText p {font-size: 19px; margin-top: -25px;}
+        .faqRight{padding-right:0;}
+        .contactRight{padding-right: 0;}
+        .secContact{background-color: #FFF; }
+        .contactRight{padding-top: 65px;padding-bottom: 35px; padding-right: 15px !important;}
+        .faqLeft {background-size: cover; height: 514px;}
+        .faqLeft .imgText {text-align: center}
+        .faqContent,.hireForm{height: auto;}
+        /* .faqContent .card{margin-right: 10px;}*/
+        select.form-control{letter-spacing: 1.5px;}
+/*        form {padding-top: 15px;}*/
+        .hireForm{overflow: visible !important;}
+        .text-center{padding: 0 !important;}
+        .contactLeft .imgText p{font-size: 17px;width: 100%;display: flex; flex-direction: column;margin-bottom: 0}   
+        .hireRight,.loginRight,.secContact .loginRight,.faqRight{padding-top: 20px;padding-bottom: 20px;}
+        .left{margin-top: 20px}
+        .formHeader h4{margin-top: 0 !important}
+    }
+    @media only screen and (max-width: 414px){
+    .mb-img img {margin-right: 0;}
+    }
+    @media only screen and (max-width: 640px) {
+        .Text p {
+            left: 112px;
+        }
+        .faqContent,.hireForm{
+            height: auto;
+        }
+    }
+    @media only screen and (max-width: 375px) {
+        .mb-img img{margin-right: 89px;}
+        .headerText p { margin-left: 19px; font-size: 19px; width: 150px; margin-top: -30px;}
+        .logo img{width: 70px ;    margin-left: 5px;}
+        .faqRight{
+            padding-right: 0;
+        }
+        .Text p {
+            font-size: 17px;
+            top: -57px;
+            left: 100px;
+        }
+        .image {
+            margin-top: -32%;
+        }
+        .top-header {
+            height: 100px;
+        }
+        .decision h2 {
+          font-size: 42px;
+          width: 100%;
+          text-align: center;
+        }
+        .decision h4 {
+            font-size: 22px;
+            padding: 0;
+        }
+        .decision p {
+            font-size: 14px;
+            text-align: center;
+        }
+        button {
+            font-size: 21px !important;
+            padding: 10px 36px;
+        }
+        .text p {
+            font-size: 21px;
+        }
+    }
+    @media only screen and (max-width: 360px){
+        .headerText p {
+        margin-left: 9px;
+        font-size: 18px;
+        }
+    }
+    @media only screen and (max-width: 320px) {
+        .faqLeft .imgText {
+            bottom: 23px;
+            left: 180px; 
+    }
+        .faqRight{
+            padding-right: 0;
+        }
+        .Text p {
+            font-size: 16px;
+            top: -55px;
+            left: 87px;
+        }
+        .image {
+            margin-top: -36%;
+        }
+        .image img {
+            height: 98px;
+        }
+        .decision h2 {
+            font-size: 35px;
+            width: 100%;
+            text-align: center;
+        }
+        .decision h4 {
+            font-size: 19px;
+        }
+        .decision p {
+            font-size: 16px;
+        }
+        .text p {
+            font-size: 17px;
+        }
+        .profile {
+            height: 180px;
+        }
+        .profile img {
+            height: 137px;
+        }
+        .paid.ad {
+            height: 185px;
+        }
+        .logo img {
+            height: 78px;
+            object-fit: contain;
+            width: 82%;
+            margin-left: -17px;
+        }
+        .contactLeft .imgText p{
+            font-size:17px; 
+        }
+        .headerText p {
+            font-size: 14px;
+            margin-left: 13px;
+        }
+    }
+
+
