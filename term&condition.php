@@ -7,7 +7,7 @@ include 'headermenu.php';
     
 </style>
 
-<div class="wrapper pt-0 bg-white">
+<div class="wrapper pt-0 bg-white bablu">
     <div class="secTerm">
         <h2>Relief Teacher Terms & Conditions</h2>
         <div class="content">
