@@ -8,7 +8,15 @@
     font-style: normal;
     font-display: swap;
 }*/
-@import url(https://db.onlinewebfonts.com/c/a64ff11d2c24584c767f6257e880dc65?family=Helvetica);
+/*@import url(https://db.onlinewebfonts.com/c/a64ff11d2c24584c767f6257e880dc65?family=Helvetica);*/
+@font-face {font-family: "Helvetica";
+    src: url("../font/a64ff11d2c24584c767f6257e880dc65.eot"); /* IE9*/
+    src: url("../font/a64ff11d2c24584c767f6257e880dc65.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../font/a64ff11d2c24584c767f6257e880dc65.woff2") format("woff2"), /* chrome firefox */
+    url("../font/a64ff11d2c24584c767f6257e880dc65.woff") format("woff"), /* chrome firefox */
+    url("../font/a64ff11d2c24584c767f6257e880dc65.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("http://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica") format("svg"); /* iOS 4.1- */
+}
 @font-face {
     font-family: 'Helvetica Neue LT Pro';
     src: url('../font/HelveticaNeueLTPro-Bd.woff2') format('woff2'),
@@ -83,12 +91,12 @@ body {
 }
 .logo img {width: 130px;}
 .menu-bg{ background: #000;}
-.menu-item {font-weight: 600; background: #000;display: flex;justify-content: center;color: #fff; height: 45px; align-items: center;}
+.menu-item {font-weight: 600; background: #231F20;display: flex;justify-content: center;color: #fff; height: 45px; align-items: center;}
 .menu-item a {color: #fff;font-size: 16px;font-weight: normal;display: flex;width: 182px;font-family: 'Finger Paint';justify-content: center;align-items: end;}
 .menu-item a:hover {color: #fff !important;text-decoration: none;background-image: linear-gradient(to right, #1b75bc , #1c407d);border: 2px solid #fff;width: 182px;height: 45px;margin: 0;display: flex;align-items: center;justify-content: center;}
 .menu-item a.active {color: #fff !important; text-decoration: none; background-image: linear-gradient(to right, #1b75bc , #1c407d);border: 2px solid #fff; width: 182px;height: 45px;margin: 0; display: flex; align-items: center; justify-content: center;}
 nav.navbar {display: none;}
-.decision{position: relative;z-index: 9;padding: 35px;text-align: center}
+.decision{position: relative;z-index: 9;padding: 20px 35px 35px 35px;text-align: center}
 .decision h2 {font-size: 65px;font-weight: bold;color: #231f20;margin-bottom: 0;font-family: 'Helvetica Neue LT Pro';}
 .decision h4 {margin: 15px 0;font-weight: 600;font-size: 28px; font-family: 'Helvetica' !important;letter-spacing: 1px;margin-bottom: 17px; }
 .decision p {margin: 0;font-size: 20px; line-height: 1.5; font-family: "Helvetica";font-weight: 600;}
@@ -113,7 +121,7 @@ hr {border: 1px solid #000 !important; width: 100%;}
 .more-profile a { padding: 17px;color: #000;text-decoration: none;font-size: 17px;    font-family: arial;}
 .more-profile a:hover {color: #656363 !important; text-decoration: none;}
 .paid.ad {display: none;}
-.footer { background: radial-gradient( #1b75bc, #285cb3);}
+.footer { background: radial-gradient( #1b75bc, #285cb3);text-align: center}
 .footer ul {display: flex;justify-content: center; list-style: none; margin: 0 auto; padding: 0;}
 .footer li {padding: 10px 0;}
 .footer li a {color: #fff;padding: 0 20px;border-right: 1px solid #fff;    font-family: arial;}
@@ -130,11 +138,12 @@ form .button.contactBtn{float:right;}
 .secContact{padding: 0px 15px 0 15px;background-color: #f4f5f5}
 .secContact .loginRight{padding-top: 15px;padding-bottom: 15px;}
 .secContact .formHeader h4{    margin-bottom: 20px;}
+.secContact .loginRight .form-control{}
+.secContact .contactLeft .imgText{left: 51%;}
 .contactRight{padding-top: 65px; padding-bottom: 50px; padding-right: 50px !important;}
 .contactLeft img{width: 100%}
 .contactLeft .imgText{position: absolute;bottom: 15px;left: 55%;transform: translateX(-50%);width: 35%;}
 .contactLeft .imgText p{font-weight: bold;color: #000;font-size: 18px;font-family: Helvetica;}
-
 select.form-control{-webkit-appearance: none;-moz-appearance: window;border: none;background-image: url(../img/selectArrow.svg);background-repeat: no-repeat;background-position: right center;background-size: 20px;background-position-x: calc(100% - 10px);background-color: #e6e7e8; font-family: Arial !important;font-family: Helvetica;}
 textarea.form-control{background-color: #e6e7e8;border: none; font-family: Helvetica;letter-spacing: 3px;height: 150px}
 .navFaq{display: flex;justify-content: space-between;margin-bottom: 15px !important}
@@ -157,7 +166,7 @@ textarea.form-control{background-color: #e6e7e8;border: none; font-family: Helve
 .faqContent .card{}
 .faqContent .card .card-header{border-radius: 0;padding: 0;}
 .faqContent .card .card-header h5{width: 100%;height: 100%; margin: 0}
-.faqContent .card .card-header button{width: 100%;text-align: left;border: none;padding: 6px 15px !important;display: flex;justify-content: space-between;align-items: center; letter-spacing: 2px;color: #a7a9ac !important;white-space: initial;}
+.faqContent .card .card-header button{width: 100%;text-align: left;border: none;padding: 3px 15px !important;display: flex;justify-content: space-between;align-items: center; letter-spacing: 2px;color: #a7a9ac !important;white-space: initial;}
 .faqContent .card .card-header button img{transition: all 0.2s;width: 20px;  -webkit-transform: rotate( 360deg); transform: rotate( 360deg);position: absolute;top: 15px;right: 15px;}
 .faqContent .card .card-header button[aria-expanded="true"] img{-webkit-transform: rotate(180deg);transform: rotate(180deg);}
 .faqRight{padding-top: 35px; padding-bottom: 35px; padding-right: 50px !important;}
@@ -172,7 +181,7 @@ button.btn.btn-link:focus {text-decoration: none !important;}
 .form-group a {font-family: 'Helvetica';}
 .form-group p {font-family: 'Helvetica';}
 .secTopBanner{align-items: center}
-.secTopBanner .text{position: absolute;bottom: 0;   width: 100%;right: 55px;}
+.secTopBanner .text{position: absolute;bottom: 0;   width: 100%;right: 60px;}
 .error-img {display: flex;align-items: center;justify-content: center; flex-direction: column;}
 .data {display: flex; justify-content: center; background: #f1f1f1; height: 300px; align-items: center; margin-bottom: 20px;}
 .data p {text-align: center; font-size: 18px;}
@@ -219,7 +228,7 @@ a:hover{ text-decoration: none !important;color: #000 !important;}
 .left p {font-size: 18px;font-weight: normal;margin: 0;}
 .dec-img4 {position: relative;}
 .dec-img4 p { position: absolute; bottom: 57px;left: 135px;font-size: 17px;font-weight: 700;}
-.left a {color: #000;font-size: 18px;text-decoration: none;}
+.left a {color: #000;font-size: 18px;text-decoration: none;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;}
 .left a:hover {text-decoration: none; color: #2366b7 !important ;}
 .dec-img4 {background: url(http://dev.betadelivery.com/ECE/img/img-4.png); background-position: left top; background-size: auto; background-repeat: no-repeat;}
 .tab-pane {display: none;}
@@ -228,7 +237,7 @@ a:hover{ text-decoration: none !important;color: #000 !important;}
 .fa-angle-down:before {content: "\f107";}
 .btn { font-size: 18px !important;background: transparent;color: #b1b1b1; font-family: sans-serif !important;}
 .btn-link:hover { background: transparent;}
-.card .card-header {background: #e6e7e8;min-height: 40px;display: flex; align-items: center; border-bottom: none;}
+.card .card-header {background: #e6e7e8;min-height: 34px;display: flex; align-items: center; border-bottom: none;}
 .card .card-body {padding: 15px; text-align: left; font-family: Helvetica;}
 .btn-link:hover {text-decoration: none !important;margin: 0 !important; padding: 0 !important;}
 .btn-link {padding: 0 !important;margin: 0 !important; color: #5f5f5f !important;}
@@ -242,14 +251,16 @@ a:hover{ text-decoration: none !important;color: #000 !important;}
 .form-group:focus {outline: none !important;}
 .contactBtn button:focus {outline: none !important;}
 .close:focus, .close:hover { text-decoration: none; opacity: 1 !important;}
-.topHeader{background: url(../img/img-1.png) no-repeat;background-position: right bottom;background-size: contain;background-color: #1b75bc;display: flex;justify-content: space-between;align-items: center;height: 200px;}
+.topHeader{background: url(../img/img-1.png) no-repeat;background-position: right bottom;background-size: contain;background-color: #1A78BE;display: flex;justify-content: space-between;align-items: center;height: 200px;}
 .topHeaderRight{width: 200px}
+.mb-img{display: none}
 .headerText p{font-size: 32px;color: #fff;text-align: center;font-family: Arial;margin: 0}
+.headerText p br{display: none}
 .form-group {margin-bottom: 20px !important;}
 .formHeading{margin-bottom:8px;}
-.formHeading h6{margin-bottom: 0;font-family: 'Helvetica';letter-spacing: 2px;padding: 3px 10px;font-weight:600;height: 24px !important;font-size: 14px}
+.formHeading h6{margin-bottom: 0;font-family: 'Helvetica';letter-spacing: 2px;padding: 3px 10px;font-weight:600;height: 20px !important;font-size: 12px}
 .formHeading{background-color: #bad1ed; padding: 2px;}
-.hireForm .form-control{letter-spacing:0;font-family: Helvetica;border-radius:0;height: 30px !important;font-size: 14px}
+.hireForm .form-control{letter-spacing:0;font-family: Helvetica;border-radius:0;height: 26px !important;font-size: 12px}
 .hireForm .form-group{margin-bottom: 0.2rem !important;}
 .loginBtn{float:right;}
 /*.hireForm{height: 430px;overflow-y: auto;padding-right: 10px}*/
@@ -260,22 +271,22 @@ section,hr{width: 100%}
 .formHeader p{font-family: Helvetica;margin-top: 20px;margin-bottom: 40px;}
 .textForgot{}
 .formHeader a { color: #2167b7;text-decoration: none;font-weight: normal;}
-.footer ul {display: flex; justify-content: center; list-style: none; margin: 0 auto; padding: 0;border-bottom: 2px solid #fff;}
+.footer ul {display: flex; justify-content: center; list-style: none; margin: 0 auto; padding: 0;border-bottom: 1px solid #fff;}
 .footer p { text-align: center; color: #fff; font-family: 'Arial';letter-spacing: 0px; font-weight: 300;margin: 0;padding: 10px 0;}
 .secFaqs,.secHire{background: url(../img/contactImg.jpg) no-repeat;background-position: left bottom;background-size: 52%;background-color: #f4f5f5;background-position-x: 5px;}
 .secFaqs .contactLeft img,.secHire .contactLeft img{opacity: 0}
-.hireRight{padding: 25px 0;}
+.hireRight{padding: 20px 0 25px 0;}
 .modal-body{padding: 20px!important}
-.modal-header .close{position: absolute;right: 0;top: 0;margin: 0!important}
+.modal-header .close{position: absolute;right: 0;top: 5px;margin: 0!important}
 .select_user a{width: 100%;background: #b9d1ed;height: 50px;border-radius: 8px;text-align: center;align-items: center;display: flex;justify-content: space-between;padding: 0 15px;color: #000;transition: all .2s ease-in-out;font-family: Helvetica;}
 .select_user a:first-child{margin-bottom: 20px;}
 .select_user a i{margin-left: 5px }
 .select_user a:hover,.select_user a:focus{background: #2269b8;color: #FFF !important;}
-.secTerm {font-family:arial;color: #000;padding: 30px 50px;background-color: #f4f5f5;}
-.secTerm h2 { font-size: 15px; font-weight: bold; text-decoration: underline;}
-.secTerm .content {padding-top: 30px;}
+.secTerm {font-family:arial;color: #000;padding: 38px 50px 30px 50px;background-color: #f4f5f5;}
+.secTerm h2 { font-size: 15px; font-weight: bold; text-decoration: underline;margin-bottom: 20px}
 .secTerm .content h3 {font-size: 14px;font-weight: bolder;margin-bottom: 15px}
 .secTerm .content ul{margin-bottom: 30px}
+.secTerm .content ul:last-child{margin-bottom: 0}
 .secTerm .content li {margin: 0 auto; display: block;font-weight: 500;font-size: 14px;}
 .secTerm .content li p{margin-bottom: 0}
 .secTerm .content span.number {padding-right: 15px; font-style: normal;font-weight: 600;margin-bottom: 0}
@@ -285,8 +296,19 @@ section,hr{width: 100%}
 .secTerm .content dd {margin-left: 25px;}
 .secTerm .content p{font-style:normal;font-size: 14px; display: flex;}
 .secHire .button.contactBtn button{margin-top: 15px}
-.mb-img img { display: none;}
-.headerText p br {display: none;}
+.footerListWrapper{display: inline-block}
+.secdetails{font-family: Arial; color: #000; padding: 40px 40px 80px 40px; background-color: #f4f5f5;}
+.details{ margin: 0 auto;}
+.details h2 {font-size: 18px; font-weight: bold; text-decoration: underline; padding-bottom: 30px; margin: 0;}
+.details textarea { width: 100%;overflow: auto; border: 0;outline: 0;background: transparent; border-bottom: 1px solid #000; border-radius: 0;}
+.details .form-control {border: 0;outline: 0;background: transparent;border-bottom: 1px solid #000; border-radius: 0;font-size: 13px;}
+.details label.col-form-label {font-size: 14px;  color: #000; font-weight: 500; padding-right: 0; padding-bottom:0; display: flex; align-items: flex-end; }
+.details h3 {font-size: 16px; font-weight: bold; text-decoration: underline; padding-top: 35px; padding-bottom: 20px;margin: 0}
+.details p { display: inline; margin: 5px;}
+.details input[type="radio"] { margin: 11px;}
+.details .form-control:focus { box-shadow: none !important;}
+.details button { float: right; background-color: #b9d1ed; border: none; padding: 4px 15px;}
+.details input{width: inherit; border: 0; outline: 0; background: transparent; border-bottom: 1px solid #000; padding: 0;}
 /*    Added sadhana*/ 
 /* @media (max-width:3166px){
     .secFaqs>div{align-items: center;}
@@ -331,12 +353,9 @@ section,hr{width: 100%}
       }*/
     @media (min-width:2374px){
     .secTopBanner .text {right: 30px;}
-    .more-profile {margin-top: 0 !important;}
-    .footer ul{border-bottom: 5px solid #fff; width: 460px;}
     .footer li a {font-size: 16px;}
-    .profile img {height: 105px;}
-    .profile a {font-size: 20px;}
     }
+    
     @media (min-width:2301px) {
         .secTopBanner .col-xl-7,.secTopBanner .col-xl-5,
         .register-now .col-xl-7,.register-now .col-xl-5{max-width: 50%;min-width: 50%;}
@@ -362,18 +381,17 @@ section,hr{width: 100%}
         .faqContent{height: auto}
         .secHire>div{align-items: flex-end !important}
         .hireForm{height: auto;}
-        .decision{padding: 50px 100px;}
+        .decision{padding: 30px 100px 51px 100px;}
         .decision h2{font-size: 70px}        
         .decision h4{margin: 25px 0;line-height: 1.5;}
         .decision p{line-height: 1.7}
         .profile{height: 230px;}
-        .more-profile{margin-top: 20px}
         .more-profile a{font-size: 22px}
         .wrapper{padding-top: 0;}
         .formHeader h4{font-size: 45px;}
         .button.contactBtn button{font-size: 19px;}
         .contactLeft .imgText p,.formHeader p{font-size: 25px;}
-        .formHeading{ height: 38px;display: flex;align-items: center;}
+        .formHeading{ height: 34px;display: flex;align-items: center;margin-bottom: 5px}
         .navFaq .nav-item .nav-link{height: 55px;font-size: 25px;}
         .textForgot{font-size: 20px}
         .form-group {margin-bottom: 20px !important;}
@@ -383,17 +401,20 @@ section,hr{width: 100%}
         .secFaqs,.secHire{background-size: 50%}
         .contactLeft .imgText{bottom: 50px;left: 53%;}
         .faqContent .card .card-header button img{top: 20px}
-        .hireForm .form-control{height: 37px !important;}
+        .hireForm .form-control{height: 35px !important;}
     }
     @media (min-width:2698px) {
-        .card .card-header {min-height: 60px;}
+        .card .card-header {min-height: 65px;}
         .faqContent .card .card-header button img{top: 25px}
-        .navFaq .nav-item .nav-link{height: 65px}
-        .left{height: 60px}
+        .navFaq .nav-item .nav-link{height: 70px}
+        .left{height: 70px;}
         .contactLeft .imgText p, .formHeader p{font-size: 32px}
         .contactLeft .imgText{bottom: 100px;left: 53%;}
         input.form-control, .button.contactBtn button, select.form-control{height: 65px !important}
         .formHeader h4 {font-size: 50px;}
+        .profile{height: 270px}
+        .more-profile{margin-top: 15px}
+        .more-profile a {font-size: 25px;}
     }
     @media (max-width:2698px) and (min-width:2024px) {
         
@@ -409,6 +430,47 @@ section,hr{width: 100%}
         .formHeader h4{}
         .contactLeft .imgText p{}
     }
+    @media (min-width:2699px) {
+        .secTerm .content{width: 75%;margin: auto}
+        .formHeading{height: 48px;}
+        .hireForm .form-control{height: 42px !important}
+        .decision{padding: 20px 35px 35px 35px}
+    }
+    @media (max-width:2698px) and (min-width:2024px) {
+        .secTerm .content{width: 75%;margin: auto}
+        .formHeading{}
+        .decision{padding: 19px 35px 35px 35px}
+    }
+    @media (max-width:2698px) and (min-width:2024px) {
+        .secTerm .content{width: 75%;margin: auto}
+        .card .card-header{min-height: 48px}
+        .navFaq .nav-item .nav-link{height: 50px;}
+        .decision{padding: 19px 35px 35px 35px}
+    }
+    @media (max-width:2023px) and (min-width:1799px) {
+        .secTerm .content{width: 75%;margin: auto}
+        .card .card-header{min-height: 44px}
+        .navFaq .nav-item .nav-link{height: 44px;}
+        .hireForm .form-control{height: 30px !important;font-size: 14px}
+        .decision{padding: 16px 35px 35px 35px}
+    }
+    @media (max-width:1798px) and (min-width:1687px) {
+        .secTerm .content{width: 80%;margin: auto}        
+        .card .card-header{min-height: 44px}
+        .navFaq .nav-item .nav-link{height: 44px;}
+        .formHeading h6{height: 24px !important;}
+        .hireForm .form-control{height: 30px !important;font-size: 14px}
+        .decision{padding: 16px 35px 35px 35px}
+    }
+    @media (max-width:1686px) and (min-width:1499px) {
+        .secTerm .content{width: 80%;margin: auto}
+        .navFaq .nav-item .nav-link {height: 45px;}
+        .card .card-header {min-height: 42px;}
+        .decision{padding: 16px 35px 35px 35px}
+    }
+    @media (max-width:1498px) and (min-width:1349px) {
+        
+    }
     @media (max-width:1920px) and (min-width:1601px) {
         .decision h2{font-size: 77px; margin-bottom: 17px;}
         .text p{font-size: 30px}
@@ -422,11 +484,9 @@ section,hr{width: 100%}
         .hireForm{height: 495px;}
         .contactRight{height: 71vh;}
         input.form-control,.secLogin .button.contactBtn button,.secContact .button.contactBtn button,select.form-control{height: 55px !important;}
-        .card .card-header{min-height: 55px}
         .faqContent .card .card-header button img{top: 22px}
         .formHeader h4{font-size: 30px;}
         .contactLeft .imgText p{font-size: 20px}
-        .navFaq .nav-item .nav-link{height: 55px;}
         .contactLeft .imgText{bottom: 30px;left: 52%;}
     }
     @media (min-width:1686px) {
@@ -439,11 +499,10 @@ section,hr{width: 100%}
         .decision p{font-size: 20px;}
         .text p{font-size: 22px}
         .secContact{min-height: 65vh;}
-        input.form-control,.button.contactBtn button{height: 50px; outline: 0;}
     }
     @media (max-width:1500px) {
         .decision h2 {font-size: 60px;}
-        .decision{padding: 25px 35px;}
+        .decision{padding: 13px 35px 25px 35px;}
         .text p{position: relative;font-size: 16px;}
     }
     @media (max-width:1367px) and (min-width:1000px){
@@ -477,7 +536,9 @@ section,hr{width: 100%}
         .decision p,.decision h4{width: 100%}
     }
     @media only screen and (max-width: 991px){
-        .secTerm{padding: 30px 15px;}
+        .form-control:focus{background-color: #f4f5f5 !important;}
+        .topHeader{background: url(../img/img.png) no-repeat;background-position: right bottom;background-size: contain;background-color: #1b75bc;}
+        .secTerm{padding: 38px 15px 30px 15px;}
         .secTerm .content ul{padding-left: 15px}
         .secTerm .content span.tab{min-width: 120px;width: 120px;}
         .secTopBanner .text{position: relative;right: 0}
@@ -485,7 +546,7 @@ section,hr{width: 100%}
         .secFaqs,.secHire{background: none}
         .formHeader h4,.formHeader p{text-align: center; margin: 15px auto!important; justify-content: center;}
         .hireForm,.faqContent{height: auto;padding: 0}
-        .left{padding: 10px 0;height: auto}
+        .left{padding: 10px 0;}
         .headerText p{text-align: left;    margin-left: 20px;}
         .container{padding: 0 !important}
         .register-now{position: relative}
@@ -711,13 +772,13 @@ section,hr{width: 100%}
             background: transparent;
             display: flex;
             border: none;    padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9;
         }
         .navbar-light .navbar-toggler[aria-expanded="true"] span{
             background-image: url(../img/close.svg)!important;
@@ -882,7 +943,15 @@ section,hr{width: 100%}
         }
     }
     @media only screen and (max-width: 767px) {
-        .mb-img img { height: 130px;display: block;float: right;margin-right: 89px;}
+        .secdetails {padding: 45px 20px 95px 20px !important;}
+        .details {padding:0;}
+        form .button.contactBtn{margin-top: 10px}
+        .secLogin form .button.contactBtn{margin-top: 0px}
+        .secForgot form .button.contactBtn{margin-top: 10px}
+        .footerListWrapper{width: 100%;}
+        .secTerm .content p{font-size: 13px}
+        .headerText p br{display: block;}
+        .mb-img img { height: 130px; display: none;}
         .secFaqs .contactLeft .imgText{width: 50%}
         .contactLeft .imgText{width: 100%}
         .formHeader h4{font-size: 20px}
@@ -894,9 +963,9 @@ section,hr{width: 100%}
         .mob-line {display: block !important;}
         .contactLeft img {height: auto !important}
         .button.contactBtn button{font-size: 16px !important;}
-        .hireForm .form-control,.formHeading h6{height: 34px !important;}
-        .formHeading h6{height: 24px !important;}
-        .secHire .button.contactBtn button{margin-top: 0}
+        .hireForm .form-control,.formHeading h6{height: 38px !important;}
+        .formHeading h6{height: 30px !important;padding: 6px 10px;}
+        .secHire .button.contactBtn button{margin-top: 10px}
         .secBanner {
             border: none;
             margin-top: 0;
@@ -1021,7 +1090,7 @@ section,hr{width: 100%}
             padding: 0 !important;
         }
         .decision {
-            padding:  20px; padding-bottom: 10px;
+            padding:  20px; padding-bottom: 0px;
         }
         .decision h2 {
            font-size: 48px;
@@ -1036,7 +1105,7 @@ section,hr{width: 100%}
             font-size: 22px;
             width: 100%;
             padding: 0;
-            text-align: center;
+            text-align: center;margin: 5px 0 10px 0
         }
         .decision-img {
             text-align: center;
@@ -1065,7 +1134,7 @@ section,hr{width: 100%}
             text-align: center;
             width: 81%;
             display: flex;
-            margin: 30px auto 0;
+            margin: 15px auto 0;
         }
         .Register-button {
             width: 100%;
@@ -1075,8 +1144,9 @@ section,hr{width: 100%}
             width: 65%;
             height: 200px;
             padding: 10px;
-            margin: 40px auto;
+            margin: 25px auto;
         }
+        .more-profile{    margin: 15px 0;}
         .profile img {
             object-fit: contain;
             width: 100%;
@@ -1136,9 +1206,7 @@ section,hr{width: 100%}
             display: flex;
             flex-direction: column;
             text-align: center;
-            padding: 10px 0;
-            align-items: center;
-            width: 100%;
+            padding: 10px 0
         }
         .footer li {
             padding: 8px 0;
@@ -1150,19 +1218,18 @@ section,hr{width: 100%}
         
         .mb-img {
             display: block;
-        } 
+    }
+        .secTopBanner .text{padding: 25px 0 15px;}
+        .secTopBanner .text p{margin: 0}
     }
     @media only screen and (max-width: 575px){
-        mb-img{display: block;}
-        .topHeader.hide {background-image: none;}
-        .headerText {margin-top: -15px;}
-        .button.contactBtn button{padding-left: 0;padding-right: 0;display: flex;justify-content: center;align-items: center}
+        .topHeaderRight{width: 130px;}
+        .button.contactBtn button{padding-left: 0;padding-right: 0;display: flex;justify-content: center;align-items: center;}
         .loginRight{padding-bottom: 1rem}
-        .headerText{margin-top: 28px}
-        .topHeader{height: 130px;}
-        .logo img{width: 70px; margin-left: 5px;}
-        .logo{width: 120px;padding: 25px 20px 25px 0; }
-        .headerText p {font-size: 19px; margin-top: -25px;}
+        .topHeader{height: 100px;}
+        .logo img{width: 50px; margin-left: 10px;}
+        .logo{width: 75px;padding: 25px 25px 25px 0; }
+        .headerText p{font-size: 18px;margin-left: 0}
         .faqRight{padding-right:0;}
         .contactRight{padding-right: 0;}
         .secContact{background-color: #FFF; }
@@ -1176,12 +1243,10 @@ section,hr{width: 100%}
         .hireForm{overflow: visible !important;}
         .text-center{padding: 0 !important;}
         .contactLeft .imgText p{font-size: 17px;width: 100%;display: flex; flex-direction: column;margin-bottom: 0}   
-        .hireRight,.loginRight,.secContact .loginRight,.faqRight{padding-top: 20px;padding-bottom: 20px;}
-        .left{margin-top: 20px}
+        .hireRight,.loginRight,.secContact .loginRight{padding-top: 25px;padding-bottom: 30px;}
+        .faqRight{padding-top: 25px;padding-bottom: 25px;}
+        .left{margin-top: 25px}
         .formHeader h4{margin-top: 0 !important}
-    }
-    @media only screen and (max-width: 414px){
-    .mb-img img {margin-right: 0;}
     }
     @media only screen and (max-width: 640px) {
         .Text p {
@@ -1192,9 +1257,8 @@ section,hr{width: 100%}
         }
     }
     @media only screen and (max-width: 375px) {
-        .mb-img img{margin-right: 89px;}
-        .headerText p { margin-left: 19px; font-size: 19px; width: 150px; margin-top: -30px;}
-        .logo img{width: 70px ;    margin-left: 5px;}
+        .headerText p {margin-left: 13px; font-size: 16px;}
+        .logo img{width: 55px;margin-left: 15px;}
         .faqRight{
             padding-right: 0;
         }
@@ -1233,7 +1297,7 @@ section,hr{width: 100%}
     @media only screen and (max-width: 360px){
         .headerText p {
         margin-left: 9px;
-        font-size: 18px;
+        font-size: 14px;
         }
     }
     @media only screen and (max-width: 320px) {
@@ -1288,9 +1352,6 @@ section,hr{width: 100%}
             font-size:17px; 
         }
         .headerText p {
-            font-size: 14px;
-            margin-left: 13px;
+            font-size: 13px;
         }
     }
-
-

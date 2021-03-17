@@ -2,7 +2,7 @@
 include 'header.php';
 include 'headermenu.php';?>
 <div class="wrapper">
-    <section class="secLogin">
+    <section class="secLogin secForgot">
         <div class="row h-100">
             <div class="col-lg-6 col-md-12 contactLeft text-center h-100">
                 <img src="img/contactImg.jpg" class="img-fluid">

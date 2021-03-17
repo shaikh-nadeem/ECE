@@ -1,12 +1,12 @@
         <footer class="footer">
-            <div class="container">
+            <div class="footerListWrapper">
                 <ul>
                     <li><a href="term&condition.php">Terms &amp; Conditions</a></li>
-                    <li><a href="#"> Privacy Statement</a></li>
+                    <li><a href="privacy-policy.php"> Privacy Statement</a></li>
                     <li><a href="contact.php"> Contact</a></li>
                 </ul>
-                <p> ECE Teacher All Rights Reserved</p>
             </div>
+            <p> ECE Teacher All Rights Reserved</p>
         </footer>
     </div>
  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

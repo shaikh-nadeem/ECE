@@ -20,7 +20,7 @@ include 'headermenu.php';?>
                     </div>
                     <div class="form-group">
                         <select id="inputState" class="form-control">
-                            <option selected>Your Region?</option>
+                            <option selected>Your Region :</option>
                             <option>Northland</option>
                             <option>Auckland</option>
                             <option>Waikato</option>
