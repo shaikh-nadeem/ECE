@@ -36,13 +36,59 @@ File: Core
   overflow-x: hidden;
   font-size: 14px;
 }*/
+@font-face {font-family: "Helvetica";
+    src: url("../fonts/a64ff11d2c24584c767f6257e880dc65.eot"); /* IE9*/
+    src: url("../fonts/a64ff11d2c24584c767f6257e880dc65.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../fonts/a64ff11d2c24584c767f6257e880dc65.woff2") format("woff2"), /* chrome firefox */
+    url("../fonts/a64ff11d2c24584c767f6257e880dc65.woff") format("woff"), /* chrome firefox */
+    url("../fonts/a64ff11d2c24584c767f6257e880dc65.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("http://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica") format("svg"); /* iOS 4.1- */
+}
+@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/HelveticaMedium.woff2') format('woff2'),
+        url('../fonts/HelveticaMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Finger Paint';
+    src: url('../fonts/fingerpaint/FingerPaint-Regular.woff2') format('woff2'),
+    url('../fonts/fingerpaint/FingerPaint-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Neue LT Pro';
+    src: url('../fonts/HelveticaNeueLTPro/HelveticaNeueLTPro-Bd.woff2') format('woff2'),
+    url('../fonts/HelveticaNeueLTPro/HelveticaNeueLTPro-Bd.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+/*@font-face {
+    font-family: 'Helvetica';
+    src: url('../fonts/helvetica/HelveticaMedium.woff2') format('woff2'),
+        url('../fonts/helvetica/HelveticaMedium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}*/
+
+
 body {
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
-    font-size: 13px;
+/*    font-family: "Raleway", Arial, Helvetica, sans-serif;*/
+    font-family: 'Helvetica Neue LT Pro';
+    font-size: 14px;
     line-height: 22px;
     margin: 0;
     padding: 0;
-    color: #666666;
+/*    color: #666666;*/
+color: #212529;
     background: #fff !important;
     text-shadow: none !important;
 }
@@ -682,11 +728,14 @@ textarea.form-control {
 }
 
 .form-control {
-  background-color: #ffffff;
+/*  background-color: #ffffff;*/
+background-color:  #e6e7e8;
   border: 1px solid #E3E3E3;
   border-radius: 4px;
   height: 38px;
-  font-size: 14px;
+/*  font-size: 14px;*/
+font-size: 1rem;
+font-weight: 500;
   max-width: 100%;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -877,7 +926,7 @@ select[multiple] {
 
 .nav > li > a:focus, .nav > li > a:hover {
   text-decoration: none;
-      background-color: #105f86;
+/*      background-color: #105f86;*/
     color: #fff;
     transition: .3s;
 }
@@ -959,7 +1008,7 @@ select[multiple] {
   border-color: #DDDDDD;
   border-radius: 2px;
   box-shadow: none;
-  padding: 25px;
+  padding: 20px;
 }
 
 .modal .modal-dialog .modal-content .modal-header {
@@ -6539,7 +6588,8 @@ File: Responsive
 .custombox-modal-wrapper.custombox-modal-wrapper-fadein.custombox-modal-open,
 .custombox-modal-wrapper.custombox-modal-wrapper-newspaper.custombox-modal-open,
 .custombox-modal-wrapper.custombox-modal-wrapper-slide.custombox-modal-open {
-    background: rgba(142, 202, 193, 0.68);
+/*    background: rgba(142, 202, 193, 0.68);*/
+background: linear-gradient(to bottom, #1b75bc1a, rgba(28, 64, 125, 0.62));
 }
 
 .modal-demo.edit-modal .close,
@@ -6567,15 +6617,17 @@ File: Responsive
     position: absolute;
     opacity: 1;
 }
-.sup-form .form-group {
+.updatemodal-demo .sup-form .form-group {
     float: left;
+    margin-bottom: 0;
 }
 .sup-form {
     padding: 0;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #ffffff;
-    background-color: #105f86;
+/*    background-color: #105f86;*/
+background: linear-gradient(to right, #1b75bc , #1c407d);
     border-color: #105f86 #105f86 #105f86;
 }
 .bas-det .form-group,
@@ -6858,8 +6910,400 @@ div.clear {
     height: 40px;
     position: absolute;
     opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .w100p {
     width: 100%;
 }
 /*hitesh css end*/  
+
+/*Vijay*/
+.log-body h4 {
+    color: #2c6bb9;
+}
+#topnav .topbar-main {
+    background: radial-gradient( #ffffff, #ffffff);
+    height: 60px;
+}
+.topbar-main .logo {
+    background: #fff;
+    border-radius: 0 25px 25px 0px;
+    padding: 0px 5px;
+    width: 100px;
+    height: 60px;
+}
+a.logo {
+    display: flex;
+    align-items: center;
+}
+#topnav .topbar-main .has-submenu{margin-left: 10px;}
+.topbar-main .logo img{height: 94%;}
+#topnav .navigation-menu > li > a{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #000;
+    font-family: 'Helvetica';
+}
+#topnav .topbar-main .has-submenu:hover a, #topnav .topbar-main .has-submenu.active a{
+    color: #fff !important;
+    text-decoration: none;
+    background-image: linear-gradient(to right, #1b75bc , #1c407d);
+}
+.navbar-custom ul li a{
+font-family: 'Helvetica';
+}
+#topnav .navigation-menu > li > a span{border-right: 0;}
+.navigation-menu > li > a span {
+    border-right: 0px;
+}
+.nav-tabs a{
+    font-size: 16px;
+     font-family: 'Helvetica';
+     font-weight: 500;
+}
+.nav-tabs li.nav-item {
+    background: #e6e7e9;
+     margin: 0 8px; 
+}
+.nav-tabs li.nav-item:last-child{margin-right: 0;}
+.nav-tabs li.nav-item:first-child{margin-left:  0;}
+.nav-tabs li.nav-item a {
+    border-radius: 0 !important;
+    color: #000;
+}
+#datatable td{
+    font-family: 'Helvetica';
+}
+.tab-content{
+    border: 0px;
+    font-family: 'Helvetica';
+}
+.nav-tabs{
+    border-bottom: 0px;
+    width: 50%;
+}
+#topnav .navigation-menu{margin-right: 15px;}
+li.dropdown.notification-list {
+    border-left: 1px solid #d8d8d8;
+}
+.dropdown.notification-list a {
+    color: #2269b8;
+    line-height: normal;
+}
+button.btn.btn-primary, .btn-bordred.btn-custom {
+    background-color: #b9d1ed !important;
+    color: #231f20 !important;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    border: none !important;
+    line-height: normal;
+    width: 180px;
+    position: relative;
+}
+.wrapper {
+    background: #f4f5f5;
+    margin-bottom: 40px;
+}
+.thead-bg {
+    background: #b9d0ed;
+}
+.navbar-custom{
+    float: left;
+}
+.topbar-custom {
+    position: absolute;
+    right: 35px;
+    top: 18px;
+}
+#topnav .navigation-menu > li > a:focus{
+    color: #000;
+}
+/*Dashboard*/
+.bg-das1, .bg-das2, .bg-das3, .bg-das4, .bg-das5, .bg-das6{
+    background: linear-gradient(to right, #1b75bc , #1c407d);
+}
+.dashicon i:before {
+    color: #00000054;
+    background: -webkit-gradient(linear, left top, left bottom, from(#1b75bc), to(#285cb3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    height: 80px;
+    line-height: 80px;
+    bottom: 32px;
+}
+
+/*Faq*/
+.edit-grid-icons .btn-bg3, .edit-grid-icons .btn-bg3:hover {
+    background-color: #2c6cb9;
+    border-color: #2c6cb9;
+}
+.edit-grid-icons .btn-success, .edit-grid-icons .btn-success:hover  {
+    background-color: #1d4886 !important;
+    border: 1px solid #1d4886 !important;
+}
+.thead-bg tr th {
+    font-weight: 400;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus, .page-item.active .page-link{
+    background: #000;
+    border:#000;
+}
+.form-group, .form-group label, .form-group input, .form-group label, .form-group select, textarea {
+    font-family: Helvetica;
+}
+/*.form-group b {
+    font-weight: 500;
+}*/
+label#category-error {
+    position: absolute;
+    top: 36px;
+}
+.add_Faq .form-group select {
+    height: 38px;
+    line-height: 38px;
+    background-color: #e6e7e8;
+    box-shadow: none;
+}
+/*.add_Faq .invalid-feedback {
+    font-size: 13px;
+}*/
+#FaqAddmodal .custom-modal-text {
+    padding: 20px 0;
+}
+.modal-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Helvetica';
+    padding-left: 30px;
+    margin-top: 0;
+    line-height: 25px;
+}
+#add_Faq  .form-group.col-sm-12 {
+    margin-bottom: 0;
+}
+input.form-control, textarea, select{
+    padding: 0.60rem .75rem;
+    background-color: #e6e7e8;
+    border: none;
+    color: #a7a9ac;
+    font-family: Helvetica;
+    font-size: 1rem;
+    font-weight:500;
+}
+.form-control:focus, select {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+.Edit_Faq .form-group.col-sm-12 {
+    margin-bottom: 0;
+}
+#FaqEditmodal .modal-title {
+    padding-left: 0;
+}
+#FaqViewmodal .modal-title {
+    padding-left: 0;
+}
+#faqTitle {
+    padding-bottom: 15px;
+}
+button.close span {
+    line-height: 25px;
+    height: 28px;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    border-color: transparent;
+}
+
+/*Loader*/
+/*button.submitbtn {
+    min-width: 100px;
+    text-align: left;
+}*/
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+.loader {
+    /* margin: 60px auto; */
+    font-size: 2px;
+    right: 10px;
+    top: 8px;
+    position: absolute;
+    /* text-indent: -9999em; */
+    border-top: 1.1em solid rgba(39, 39, 39, 0.37);
+    border-right: 1.1em solid rgba(39, 39, 39, 0.37);
+    border-bottom: 1.1em solid rgba(39, 39, 39, 0.37);
+    border-left: 1.1em solid #1d4684;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/*Contact page*/
+#ContactReplymodal .custom-modal-text {
+    padding: 20px 0;
+}
+#DeleteModelFaq .custom-modal-text {
+    padding: 0;
+    text-align: center;
+}
+#DeleteModelFaq .modal-body{
+    padding-bottom: 0;
+    font-family: Helvetica;
+}
+#DeleteModelFaq .modal-footer {
+    border-top: 0;
+    justify-content: center;
+}
+.modal-footer .btn {
+    border-radius: 9px;
+    padding: 10px 20px;
+    line-height: normal;
+    border: 0 !important;
+    font-family: Helvetica;
+    font-size: 16px;
+    width: auto;
+}
+#ContactViewmodal .modal-title{
+    padding-left: 0;
+}
+
+/*Admin login page*/
+.log-body .form-horizontal {
+    margin-bottom: 0;
+}
+.log-body .form-group.text-right {
+    margin-bottom: 0;
+}
+.card-box.log-body {
+    background: #fff;
+    margin: 0 !important;
+}
+.account-pages{
+    background: linear-gradient(to bottom, #1b75bc, #1c407d);
+}
+.checkbox.checkbox-custom {
+    padding-left: 17px;
+}
+.log-logo {
+    width: 100%;
+    height: 105px;
+    margin-bottom: 20px;
+}
+.log-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.log-body .p-20{
+    padding: 0 !important;
+}
+.invalid-feedback {
+    font-size: 11.2px;
+    font-family: 'Helvetica Neue LT Pro' !important;
+    margin: 0;
+    text-transform: capitalize;
+}
+.card-box.log-body .alert-danger {
+    background: no-repeat;
+    border: none;
+    font-size: 13px;
+}
+.form-group.capcha-pin {
+    display: flex;
+    align-items: baseline;
+    font-size: 1rem;
+}
+/*Footer*/
+.footer {
+    font-family: 'Arial';
+    font-size: 14px;
+    background: radial-gradient( #1b75bc, #285cb3);
+    color: #fff;
+    padding: 10px 0;
+}
+
+.form-group{margin-bottom: 20px;}
+.swal-button, .swal-button:not([disabled]):hover{
+    background-color: #b9d1ed !important;
+    color: #231f20 !important;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 16px;
+    border: none !important;
+    line-height: normal;
+    width: auto;
+}
+.log-body h4{padding-bottom: 15px;}
+.btn-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.modal-footer button.deletefaq {
+    width: auto;
+}
+.modal-footer button.deletecontact{
+    width: auto;
+}
+.dataTables_wrapper .dataTables_length select{
+    width: 65px !important;
+    font-size: 14px;
+}
+.dataTables_filter .form-control {
+    height: 30px;
+}
+.dataTables_filter .form-control {
+    height: 30px;
+    font-size: 14px;
+}
+.wrapper .page-title{
+    padding-top: 15px;
+    line-height: normal;
+}
+.dataTables_length .form-control {
+    height: 30px;
+    width: 55px;
+}
+.add-btn-space {
+    position: relative;
+    top: 10px;
+}
+.alert.alert-success{
+    margin-bottom: 0;
+    margin-top: 1rem;
+}

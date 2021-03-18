@@ -4,27 +4,27 @@
 @endsection
 @section('content')
 
-
 <div class="wrapper">
-    <section class="secContact">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 faqLeft">
+    <section class="secFaqs">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 contactLeft text-center align-self-end">
+                <img src="{{ asset('assets/img/contactImg.jpg')}}" class="img-fluid">
                 <div class="imgText">
                     <p>I am confident ECE Teacher will exceed your expectations</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 faqRight">
-                <ul class="nav nav-pills navFaq" role="tablist">
+                <ul class="nav nav-pills navFaq" id="tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="pill" href="#for-educators">For Educators</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="pill" href="#for-providers">For Providers</a>
                     </li>
-                </ul> 
+                </ul>
                 <div class="tab-content faqContent" id="tabs">
                     <div class="tab-pane fade show active" id="for-educators" role="tabpanel" aria-labelledby="home-tab">
-                        <div id="accordion">
+                        <div id="accordion"> 
                             @php
                             $i = 1;
                             @endphp
@@ -33,13 +33,13 @@
                             <div class="card">
                               <div class="card-header" id="heading_{{$i}}">
                                 <h5 class="mb-0">
-                                  <button class="btn btn-link <?php if($i != 1){ echo 'collapsed'; }?>" data-toggle="collapse" data-target="#collapse_{{$i}}" aria-expanded="<?php if($i == 1){ echo 'true'; }else{echo 'false';}?>" aria-controls="collapse_{{$i}}">
+                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse_{{$i}}" aria-expanded="false" aria-controls="collapse_{{$i}}">
                                     {{$educator->title}}
                                     <img src="{{asset('assets/img/selectArrow.svg')}}">
                                   </button>
                                 </h5>
                               </div>
-                              <div id="collapse_{{$i}}" class="collapse <?php if($i == 1){ echo 'show'; }?>" aria-labelledby="heading_{{$i}}" data-parent="#accordion">
+                              <div id="collapse_{{$i}}" class="collapse" aria-labelledby="heading_{{$i}}" data-parent="#accordion">
                                 <div class="card-body">{{$educator->content}}</div>
                               </div>
                             </div>
@@ -57,26 +57,23 @@
                             @endif
                         </div>
                     </div>
-
-
-                  <div class="tab-pane fade" id="for-providers" role="tabpanel" aria-labelledby="home-tab">
-                     <div id="accordion">
-                       <div id="accordion">
+                    <div class="tab-pane fade" id="for-providers" role="tabpanel" aria-labelledby="home-tab">
+                        <div id="accordion2">
                             @php
                             $j = 1;
                             @endphp
                             @if(count($providers) > 0 )
                             @foreach($providers as $provider)
                             <div class="card">
-                              <div class="card-header" id="heading_{{$j}}">
+                              <div class="card-header" id="headings_{{$j}}">
                                 <h5 class="mb-0">
-                                  <button class="btn btn-link <?php if($j != 1){ echo 'collapsed'; }?>" data-toggle="collapse" data-target="#collapse_{{$j}}" aria-expanded="<?php if($j == 1){ echo 'true'; }else{echo 'false';}?>" aria-controls="collapse_{{$j}}">
+                                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapses_{{$j}}" aria-expanded="false" aria-controls="collapses_{{$j}}">
                                     {{$provider->title}}
                                     <img src="{{asset('assets/img/selectArrow.svg')}}">
                                   </button>
                                 </h5>
                               </div>
-                              <div id="collapse_{{$j}}" class="collapse <?php if($j == 1){ echo 'show'; }?>" aria-labelledby="heading_{{$j}}" data-parent="#accordion">
+                              <div id="collapses_{{$j}}" class="collapse" aria-labelledby="headings_{{$j}}" data-parent="#accordion2">
                                 <div class="card-body">{{$provider->content}}</div>
                               </div>
                             </div>
@@ -94,17 +91,14 @@
                             @endif
                         </div>
                      </div>
-                 </div>
-
-                </div>
-                <div class="left">
-                <p>Did we miss something??</p>
-                <a href="{{route('frontend-contact')}}">click here</a>
-                </div>
+                     <div class="left">
+                         <a href="{{route('frontend-contact')}}">Did we miss something? Click here</a>
+                        
                     </div>
                 </div>
-               
-        </section>
+            </div>
+        </div>
+    </section>
 </div>
 
 @endsection

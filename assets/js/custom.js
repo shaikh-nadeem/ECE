@@ -5,12 +5,12 @@
  */
 $( document ).ready(function() {
    
-    jQuery.validator.addMethod("lettersWithSingleSpace", function(value, element) {
-        return this.optional(element) || /^[A-Za-z]{3,}$|^[A-Za-z]+\s+$|^([A-Za-z]{3,})+\s+([A-Za-z\s]{1,})+$/.test(value);
-    }, "Enter your name");
+    jQuery.validator.addMethod("lettersWithSingleSpace", function(value, element) {
+        return this.optional(element) || /^[A-Za-z]{3,}$|^[A-Za-z]+\s+$|^([A-Za-z]{3,})+\s+([A-Za-z\s]{1,})+$/.test(value);
+    }, "Enter your name");
 
-    $.validator.addMethod( "mobile", function( value, element ) {
-        return this.optional( element ) || /^[\d+](?:[0-9] ?){7,15}[\d ]{1}[0-9]$/.test( value );
+    $.validator.addMethod( "mobile", function( value, element ) {
+        return this.optional( element ) || /^[\d+](?:[0-9] ?){7,15}[\d ]{1}[0-9]$/.test( value );
     }, "Number between 7 to 15 digits");
 
     $('#contact_form').validate({
@@ -93,4 +93,3 @@ $( document ).ready(function() {
     }); 
     
 });
-

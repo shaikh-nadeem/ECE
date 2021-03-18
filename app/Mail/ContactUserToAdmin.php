@@ -54,7 +54,7 @@ class ContactUserToAdmin extends Mailable
         return $this->view('emails.contact_user_to_admin')                
             ->from($this->fromEmail, $this->fromName)
             ->replyTo($this->fromEmail, $this->fromName)
-//            ->cc('rushabh@wdipl.com','Rushabh Parekh')
+            ->cc('rushabh@wdipl.com','Rushabh Parekh')
             ->subject($this->subject);
     }
 }

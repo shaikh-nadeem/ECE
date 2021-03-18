@@ -93,7 +93,7 @@
                         </ul>
                     </div>
                     <!-- end menu-extras -->
-                    </div>
+</div>
                     <div class="clearfix"></div>
 
                 </div> <!-- end container -->

@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\FaqModel;
 
 class Faq extends Controller
-{   
+{       
     public $successCode = 200;
     public $authonticationFail = 401;
     public $internalError = 500;
@@ -17,6 +17,10 @@ class Faq extends Controller
     public $failMessage = "There was an error";
     public $credentials;
     
+    public function __construct() {
+//        $this->middleware('auth:admin')->except('logout');
+    }
+    
     public function index(){
         $educators = FaqModel::where('category','educators')->where('status','1')->get();
         $providers = FaqModel::where('category','providers')->where('status','1')->get();
@@ -24,12 +28,14 @@ class Faq extends Controller
     }
     
     public function AdminFaq(){
+        $this->middleware('auth:admin')->except('logout');
         $educators = FaqModel::where('category','educators')->where('status','1')->get();
         $providers = FaqModel::where('category','providers')->where('status','1')->get();
         return view('pages.admin.faq',['educators'=>$educators, 'providers'=>$providers,] );
     }
     
     public function addFaq(Request $request ){
+        $this->middleware('auth:admin')->except('logout');
         try {
             $input = $request->all();
   

@@ -5,7 +5,26 @@
  */
 
 $( document ).ready(function() {   
+    
+//    $('a[data-toggle="tab"]').click(function (e) {
+//        e.preventDefault();
+//        $(this).tab('show');
+//    });
+//
+//    $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+//        var id = $(e.target).attr("href");
+//        localStorage.setItem('nav-tabs', id)
+//    });
+//
+//    var selectedTab = localStorage.getItem('nav-tabs');
+//    if (selectedTab != null) {
+//        $('a[data-toggle="tab"][href="' + selectedTab + '"]').tab('show');
+//    }
 
+    $.validator.addMethod( "numberField", function( value, element ) {
+        return this.optional( element ) || /^[0-9]*$/g.test( value );
+    }, "Only Numbers allowed");
+    
     $('.FaqView').click(function(){
         var title = $(this).data('title');
         var content = $(this).data('content');
@@ -63,7 +82,7 @@ $( document ).ready(function() {
             content: {
                 required: true,
                 minlength: 2,
-                maxlength: 500,
+                maxlength: 1000,
             }
         },
         highlight: function (element) {
@@ -91,12 +110,17 @@ $( document ).ready(function() {
             data: formData,
             dataType:'json',
             success: function(result) {
-                $(".alert-success").html(result.message).fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
-                Custombox.close();
-                location.reload();
+                 $('.loader').css('display', 'block').fadeOut(4000).slideUp(1000);
+                setTimeout(function(){
+                    $(Custombox.close()).modal('hide')
+                  }, 4000);     
+//                   Custombox.fadeOut(4000);
+                $(".alert-success").html(result.message).fadeIn().delay(7000).fadeOut(1000).slideUp(1000);
+//                Custombox.close();
+//                location.reload();
             },
-            error: function(xhr, ajaxOptions, thrownError){                  
-                  $(".alert-danger").html(thrownError).fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
+            error: function(xhr, ajaxOptions, thrownError){                
+                    $(".alert-danger").html(thrownError).fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
                 }
             });
         return false;
@@ -119,18 +143,18 @@ $( document ).ready(function() {
             type: 'post',
             data: {id: id},
             success: function () {
-                $('#message').fadeIn();
-                $('#message').html('<div class="alert alert-success">Successfully Deleted</div>').fadeOut(2000);
                  window.scrollTo({
                     top: 200,
                     left: 0,
                     behavior: 'smooth'
                 });
-                location.reload();
+                $(".alert-success").html('Successfully Deleted').fadeIn().delay(7000).fadeOut(1000).slideUp(1000);
+//                location.reload();
 //                currentTR.remove();
             },
             error: function () {
-                console.log("ajax call went wrong:");
+                $(".alert-danger").html('Something went wrong').fadeIn().delay(10000).fadeOut(1000).slideUp(1000);
+                console.log("Something went wrong");
             },
         });
     });
@@ -163,10 +187,10 @@ $( document ).ready(function() {
                 required: "Please select Category",
             },
             title: {
-                required: "Enter Your Full Name",
+                required: "Title Field cannot be empty",
             },
             content: {
-                required: "Region Field cannot be empty",
+                required: "Content Field cannot be empty",
             }
         },
         submitHandler: function(form) {
@@ -179,8 +203,15 @@ $( document ).ready(function() {
             data: formData,
             dataType:'json',
             success: function(result) {
-                $("#add_Faq")[0].reset(); 
-                location.reload();
+                $("#add_Faq")[0].reset();
+                //$('#FaqAddmodal').modal('hide');
+                 $('.loader').css('display', 'block').fadeOut(4000).slideUp(1000);               
+                setTimeout(function(){
+                    $('#FaqAddmodal').modal('hide')
+                  }, 4000);
+                
+                 $(".alert-success").html('Successfully Added').fadeIn().delay(7000).fadeOut(1000).slideUp(1000);
+//                location.reload();
             },
             error: function(xhr, ajaxOptions, thrownError){  
                 console.log('error');
@@ -225,9 +256,15 @@ $( document ).ready(function() {
             dataType:'json',
             success: function(result) {
                 console.log(result);
-                $('#ContactReplymodal').modal('hide');
+                 $('.loader').css('display', 'block').fadeOut(4000).slideUp(1000);
+                //$('#ContactReplymodal').modal('hide');
+                setTimeout(function(){
+                    $('#ContactReplymodal').modal('hide')
+                  }, 4000);
+                
+                 $(".alert-success").html('Successfully Replied').fadeIn().delay(7000).fadeOut(1000).slideUp(1000);
 //                $("#contact_reply")[0].reset(); 
-                location.reload();
+                //location.reload();
             },
             error: function(xhr, ajaxOptions, thrownError){  
                 console.log('error');
@@ -251,18 +288,20 @@ $( document ).ready(function() {
             type: 'post',
             data: {id: id},
             success: function () {
-                $('#message').fadeIn();
-                $('#message').html('<div class="alert alert-success">Successfully Deleted</div>').fadeOut(2000);
+//                $('#message').fadeIn();
+//                $('#message').html('<div class="alert alert-success">Successfully Deleted</div>').fadeOut(2000);
                  window.scrollTo({
                     top: 200,
                     left: 0,
                     behavior: 'smooth'
                 });
-                location.reload();
+                 $(".alert-success").html('Successfully Deleted').fadeIn().delay(7000).fadeOut(1000).slideUp(1000);
+//                location.reload();
 //                currentTR.remove();
             },
             error: function () {
                 console.log("ajax call went wrong:");
+                 $(".alert-danger").html('Something went wrong').fadeIn().delay(2000).fadeOut(1000).slideUp(1000);
             },
         });
     });
@@ -278,7 +317,8 @@ $( document ).ready(function() {
                 secret_key:{
                     required:true,
                     minlength:4,
-                    maxlength:4
+                    maxlength:4,
+                    numberField:true
                 },
                 password:{
                     required:true,
@@ -286,6 +326,10 @@ $( document ).ready(function() {
                 },
                 email:{
                     required:true,
+                },
+                mathcaptcha:{
+                    required:true,
+                    numberField:true
                 },
             },
             highlight: function (element) {
@@ -304,6 +348,9 @@ $( document ).ready(function() {
                 email:{
                     required:"Email field required",
                 },
+                mathcaptcha:{
+                    required:"Captcha Required",
+                },
             },
             submitHandler: function(form) {
                 var form = $('#loginForm');
@@ -314,29 +361,34 @@ $( document ).ready(function() {
 //                url: 'http://eceteacher.betadelivery.com/secretkey',
                 type: form.attr('method'),
                 data: formData,
-//                data: {email:email,password:password},
                 dataType:'json',
                 success: function(result) { 
-                    if((result.data.status == false) && (result.data.authentication == false)){
-                        $(".alert-danger").html('Invalid Credential').fadeIn().delay(2000).fadeOut(1000).slideUp(1000); 
-                    }else if ((result.data.status == false) && (result.data.secret == false)) {
-                        $(".alert-danger").html('Wrong Secretkey').fadeIn().delay(2000).fadeOut(1000).slideUp(1000);                     
-                    }else if ((result.data.status == true) && (result.data.secret == true)) {
-                        window.location.replace("/admin");                      
-                    } else {
-                        swal("Otp Sent!", "Check your email", "success");
-                        $('.keyfield').css('display', 'block');
-                        $('#secret_key').attr('type', 'text');
-                        $('#secret_key').prop('disabled', false);
-                        $('#email').prop('readonly', true);
-                        $('#email').attr('type', 'hidden');
-                        $('#password').prop('readonly', true);
-                        $('#password').attr('type', 'hidden');
-//                        $('#circulardiv').css('display', 'block').fadeOut(5000).slideUp(1000);
-                        $('.submitbtn').html('Login');
+//                    if((result.data.status == false) && (result.data.authentication == false)){
+//                        $(".alert-danger").html('Invalid Credential').fadeIn().delay(2000).fadeOut(1000).slideUp(1000); 
+//                    }else if ((result.data.status == false) && (result.data.secret == false)) {
+//                        $(".alert-danger").html('Wrong Secretkey').fadeIn().delay(2000).fadeOut(1000).slideUp(1000);                     
+//                    }else if ((result.data.status == true) && (result.data.secret == true)) {
+//                        window.location.replace("/admin");                      
+//                    } else {
+
+                        $('.loader').css('display', 'block').fadeOut(4000).slideUp(1000);
+                        window.setTimeout(function() {
+                            window.location.href = '/admin';
+                        }, 4000);
+//                        swal("OTP Sent!", "Check your email", "success");
+//                        $('.keyfield').css('display', 'block');
+//                        $('#secret_key').attr('type', 'text');
+//                        $('#secret_key').prop('disabled', false);
+//                        $('#email').prop('readonly', true);
+//                        $('#email').attr('type', 'hidden');
+//                        $('#password').prop('readonly', true);
+//                        $('#password').attr('type', 'hidden');
+//                        $('#mathcaptcha').attr('type', 'hidden');
+//                        $('.mathlabel').css('display', 'none');
+                        $('.submitbtn span').html('Processing');
 //                        $(".alert-success").html(result.message).fadeIn().delay(5000).fadeOut(1000).slideUp(1000);
                         
-                    }
+//                    }
                     
                 },
                 error: function(xhr, ajaxOptions, thrownError){ 
@@ -352,8 +404,20 @@ $( document ).ready(function() {
     });
     
     
-    
-    
+//    Delete Datatable row on click 
+    var table = $('#datatable').DataTable(); 
+    $('#datatable tbody').on( 'click', '.deletecontact', function () {
+        table
+            .row( $(this).parents('tr') )
+            .remove()
+            .draw();
+    } ); 
+    $('#datatable tbody').on( 'click', '.deletefaq', function () {
+        table
+            .row( $(this).parents('tr') )
+            .remove()
+            .draw();
+    } );
     
     
     

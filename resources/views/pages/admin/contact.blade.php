@@ -11,12 +11,14 @@
                 <h4 class="page-title">Manage Contact</h4>
             </div>        
             <div class="col-sm-12">
-                @if(session('status'))                                                
+<!--                @if(session('status'))                                                
                 <div class="alert alert-success alert-dismissible"> 
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {{ session('status') }}
                 </div>
-                @endif
+                @endif-->
+                <div class="alert alert-success" style="display: none"></div>
+                <div class="alert alert-danger" style="display: none"></div>
             </div>
         </div>
 
@@ -60,7 +62,7 @@
                                             <td>{{$activeContact->contact_number}}</td>
                                             <td>{{$activeContact->email}}</td>
                                             <td>{{$activeContact->purpose}}</td>
-                                            <td>{{ substr($activeContact->comments, 0,  100) }}</td>
+                                            <td>{{ mb_strimwidth($activeContact->comments,0,50,'...') }}</td>
                                             <td class="edit-grid-icons">
                                                 <a href="#ContactViewmodal" class="btn btn-bg3 waves-effect btn-sm m-b-5 ContactView" data-target="#view_reply_content"  rel="tooltip" title="View" data-animation="fadein" data-plugin="custommodal"
                    data-overlaySpeed="100" data-overlayColor="#36404a"  data-toggle="modal"
@@ -106,14 +108,14 @@
                                         <?php $j = 1; ?>
                                         @foreach($replyedContacts as $replyedContact)    
                                         <tr>
-                                            <td>{{$i}}</td> 
+                                            <td>{{$j}}</td> 
                                             <td>{{$replyedContact->name}}</td>
                                             <td>{{$replyedContact->region}}</td>
                                             <td>{{$replyedContact->contact_number}}</td>
                                             <td>{{$replyedContact->email}}</td>
                                             <td>{{$replyedContact->purpose}}</td>
-                                            <td>{{ substr($replyedContact->comments, 0,  100) }}</td>
-                                            <td>{{$replyedContact->reply}}</td>
+                                            <td>{{ mb_strimwidth($replyedContact->comments,0,50,'...') }}</td>
+                                            <td>{{ mb_strimwidth($replyedContact->reply,0,50,'...') }}</td>
                                             <td><?php if($replyedContact->is_active == 0){ echo 'Replied'; } else { echo "Deleted"; } ?></td>
                                             <td class="edit-grid-icons">
                                                 <a href="#ContactViewmodal" class="btn btn-bg3 waves-effect btn-sm m-b-5 ContactView"  data-target="#view_reply_content" rel="tooltip" title="View" data-animation="fadein" data-plugin="custommodal"
@@ -145,9 +147,12 @@
 
 <!-- Modal -->
 <div id="ContactViewmodal" class="modal-demo updatemodal-demo">
+    <div class="modal-header">
+        <h5 class="modal-title">Contact Details</h5>
     <button type="button" class="close" onclick="Custombox.close();">
         <span>&times;</span><span class="sr-only">Close</span>
     </button>
+</div>
     <div class="custom-modal-text">
         <div class="row">
             <div class="col-sm-12 sup-form">
@@ -174,16 +179,17 @@
 <div class="modal fade" id="ContactReplymodal" tabindex="-1" role="dialog" aria-labelledby="FaqAddmodalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="">
+      <div class="modal-header">
+          <h5 class="modal-title">Reply To</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="custom-modal-text">                
+      <div class="custom-modal-text pb-0">                
         <form class="contact_reply" id="contact_reply" action="{{URL('/replycontact/')}}" method="post">
         @csrf
             <div class="row">
-                <div class="form-group col-sm-12">
+                <div class="form-group col-sm-12 mb-0">
                     <div class="form-group">
                         <input type="hidden" name="id" id="contactreplyId" value="">                        
                         <input type="hidden" name="name" id="contactreplyname" value="">                        
@@ -195,9 +201,12 @@
                         <label class="control-label mb-10">Reply Message:</label>
                         <textarea name="reply" id="reply" class="form-control" aria-describedby=""></textarea>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-custom btn-bordred">Submit</button>
+<!--                    <br>-->
+                    <div class="form-group mb-0 btn-right">
+                        <button type="submit" class="btn btn-custom btn-bordred">
+                            <div class="loader" style="display: none;"></div>
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
@@ -259,18 +268,19 @@
 <div class="modal fade" id="DeleteModelFaq" tabindex="-1" role="dialog" aria-labelledby="FaqAddmodalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="">
+      <div class="modal-header">
+          <h5 class="modal-title">Delete</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="custom-modal-text">
+      <div class="custom-modal-text pb-0">
           <div class="modal-body">
-            Are you sure?
+            Are you sure you want to delete?
           </div>
           <div class="modal-footer">
-              <button type="button" data-dismiss="modal" class="btn btn-primary deletecontact" id="delete" data-id="" value="">Delete</button>
-            <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary deletecontact" id="delete" data-id="" value="">Yes</button>
+            <button type="button" data-dismiss="modal" class="btn btn-danger">No</button>
           </div>
       </div>
     </div>

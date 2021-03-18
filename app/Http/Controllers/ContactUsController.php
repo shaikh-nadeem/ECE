@@ -32,7 +32,7 @@ class ContactUsController extends Controller
             $validator = Validator::make($request->all(), [
                 'name' => 'required|string',
                 'region' => 'required',
-                'contact_number' => 'required|integer',
+                'contact_number' => 'required',
                 'email' => 'required|string|email|emailformate',
                 'purpose' => 'required',
                 'comments' => 'required',
@@ -43,7 +43,7 @@ class ContactUsController extends Controller
 
             $dataforUser = ['subject' => config('constants.AUTO_REPLY_USER'),'name'=>$request->name];
             $dataforAdmin = ['subject' => config('constants.USER_TO_ADMIN_MAIL_SUBJECT'), 
-                'name'=> $request->name,
+                'name'=> ucwords($request->name),
                 'region' => $request->region,
                 'contact_number' => $request->contact_number,
                 'email' =>$request->email,
@@ -61,9 +61,9 @@ class ContactUsController extends Controller
                 'is_active' =>1,
             ]);
              
-//            mail::to($request->email)->send(new ContactAutoReplyToUser($dataforUser));
-//            mail::to(config('constants.ADMIN_EMAIL'))->send(new ContactUserToAdmin($dataforAdmin));
-            mail::to('nadeem.shaikh@wdipl.com')->send(new ContactUserToAdmin($dataforAdmin));
+            mail::to($request->email)->send(new ContactAutoReplyToUser($dataforUser));
+            mail::to(config('constants.ADMIN_EMAIL'))->send(new ContactUserToAdmin($dataforAdmin));
+          //  mail::to('bablu@wdipl.com')->send(new ContactUserToAdmin($dataforAdmin));
             
             return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE]], $this->successCode);
         } catch (\Exception $e) {
@@ -72,8 +72,8 @@ class ContactUsController extends Controller
     }
     
     public function AdminContact(){
-        $activeContacts = ContactUs::where('is_active','1')->get();
-        $replyedContacts = ContactUs::where('is_active','!=','1')->get();
+        $activeContacts = ContactUs::where('is_active','1')->orderby('id','DESC')->get();
+        $replyedContacts = ContactUs::where('is_active','!=','1')->orderby('id','DESC')->get();
         
         return view('pages.admin.contact',['activeContacts'=>$activeContacts, 'replyedContacts'=>$replyedContacts,] );
     }
@@ -89,11 +89,11 @@ class ContactUsController extends Controller
                 return response()->json(['code' => $this->validationError, 'message' => $this->validationErrorMessage, 'data' => ['status' => FALSE], 'error' => $validator->errors()], $this->validationError);
             }
             
-            $dataforUser = ['subject' => 'Reply your Contact from admin','reply'=>$request->reply, 'name' => $request->name];
+            $dataforUser = ['subject' => 'Reply From ECE Teachers For Your Enquiry','reply'=>$request->reply, 'name' => $request->name];
             ContactUs::where('id', $request->id)->update(['reply' => $request->reply, 'is_active' => 0]);            
             mail::to($request->email)->send(new ContactAdminToUser($dataforUser));
             
-            $mes = 'Updated Successfully';            
+            $mes = 'Reply sent successfully';            
             session()->flash('status', $mes);            
             return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE]], $this->successCode);
         } catch (\Exception $e) {           

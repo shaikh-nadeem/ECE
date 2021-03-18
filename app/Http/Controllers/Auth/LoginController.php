@@ -58,12 +58,13 @@ class LoginController extends Controller
         return view('auth.login', ['url' => 'admin']);
     }
 
-//    public function LoginSecretKey(Request $request){
-    public function adminLogin(Request $request){
+    public function LoginSecretKey(Request $request){
+//    public function adminLogin(Request $request){
         
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6',
+            'mathcaptcha' => 'required|mathcaptcha',
         ]);
         //-----check secret key form field------//
         if ($request->has('secret_key')) {
@@ -93,7 +94,7 @@ class LoginController extends Controller
         }
     }
 
-    public function adminLoginyuu(Request $request){
+    public function adminLogin(Request $request){
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:6'
@@ -101,13 +102,15 @@ class LoginController extends Controller
         
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
 
-            return redirect()->intended('/admin');
+//            return redirect()->intended('/admin');
+            return response()->json(['code' => $this->successCode, 'message' => $this->successMessage, 'data' => ['status'=>TRUE,'secret'=>true]], $this->successCode);
         }
-        return back()->withInput($request->only('email', 'remember'));
+//        return back()->withInput($request->only('email', 'remember'));
+        return response()->json(['code' => $this->successCode, 'message' => $this->failMessage, 'data' => ['status'=>false,'authentication'=>false]], $this->successCode);
     }
     
     public function showUserLoginForm(){
-        return view('auth.login', ['url' => 'user']);
+        return view('auth.login_user', ['url' => 'user']);
     }
 
     public function userLogin(Request $request){

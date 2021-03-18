@@ -8,18 +8,20 @@
     <div class="container-fluid">
         <div class="row">            
             <div class="col-sm-12">
-                <div class="btn-group pull-right m-t-20">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FaqAddmodal">Add Faq</button>
+                <div class="btn-group pull-right">
+                    <button type="button" class="btn btn-primary add-btn-space" data-toggle="modal" data-target="#FaqAddmodal">Add Faq</button>
                 </div>
                 <h4 class="page-title">Manage FAQs</h4>
             </div>        
             <div class="col-sm-12">
-                @if(session('status'))                                                
+<!--                @if(session('status'))                                                
                 <div class="alert alert-success alert-dismissible"> 
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {{ session('status') }}
                 </div>
-                @endif
+                @endif-->
+                <div class="alert alert-success" style="display: none"></div>
+                <div class="alert alert-danger" style="display: none"></div>
             </div>
         </div>
 
@@ -60,7 +62,7 @@
                                         <tr>
                                             <td>{{$i}}</td> 
                                             <td>{{$educator->title}}</td>
-                                            <td>{{ substr($educator->content, 0,  200) }}</td>
+                                            <td>{{ mb_strimwidth($educator->content,0,150,'...') }}</td>
                                             <td><?php if($educator->status == 1){ echo 'Active'; }else{ echo 'Deleted'; } ?></td>
                                             <td class="edit-grid-icons">
                                                 <a href="#FaqViewmodal" class="btn btn-bg3 waves-effect btn-sm m-b-5 FaqView" rel="tooltip" title="View" data-animation="fadein" data-plugin="custommodal"
@@ -99,7 +101,7 @@
                                         <tr>
                                             <td>{{$j}}</td> 
                                             <td>{{$provider->title}}</td>
-                                            <td>{{ substr($provider->content, 0,  200) }}</td>
+                                            <td>{{ mb_strimwidth($provider->content,0,150,'...') }}</td>
                                             <td><?php if($provider->status == 1){echo 'Active'; }else { echo 'Deleted'; } ?></td>
                                             <td class="edit-grid-icons">
                                                 <a href="#FaqViewmodal" class="btn btn-bg3 waves-effect btn-sm m-b-5 FaqView" rel="tooltip" title="View" data-animation="fadein" data-plugin="custommodal"
@@ -124,19 +126,22 @@
     </div> <!-- end container -->
 </div>
 <!-- end wrapper -->
-<div id="message"></div>
+
 <!-- Modal -->
 <div id="FaqViewmodal" class="modal-demo updatemodal-demo">
+    <div class="modal-header">
+        <h5 class="modal-title">Faq</h5>
     <button type="button" class="close" onclick="Custombox.close();">
         <span>&times;</span><span class="sr-only">Close</span>
     </button>
+</div>
 <!--            <h4 class="custom-modal-title">Modal title</h4>-->
     <div class="custom-modal-text">
         <div class="row">
             <div class="col-sm-12 sup-form">
                 <div class="form-group col-sm-12">
                     <span><b>Title :</b></span>
-                    <div id="faqTitle"></div><br>
+                    <div id="faqTitle"></div>
                     <span><b>Content :</b></span>
                     <div id="faqContent"></div>
                 </div>
@@ -148,10 +153,12 @@
 
 <!-- Modal -->
 <div id="FaqEditmodal" class="modal-demo updatemodal-demo">
-    <button type="button" class="close" onclick="Custombox.close();">
-        <span>&times;</span><span class="sr-only">Close</span>
-    </button>
-
+    <div class="modal-header">
+        <h5 class="modal-title">Edit Faq</h5>
+        <button type="button" class="close" onclick="Custombox.close();">
+            <span>&times;</span><span class="sr-only">Close</span>
+        </button>
+    </div>
     <div class="custom-modal-text">                
         <form class="Edit_Faq" id="Edit_Faq" action="{{URL('/editFaq/')}}" method="post">
         @csrf
@@ -163,15 +170,18 @@
                         <input type="hidden" name="faqEditid" id="faqEditid"  value="">
                         <input type="text" name="title" id="title" class="form-control" value="">
                     </div>
-                    <br>
+                   
                     <div class="form-group">
                         <label class="control-label mb-10">Content:</label>
                         <!--<input type="text" class="form-control" value="">-->
                         <textarea name="content" id="content" class="form-control" aria-describedby=""></textarea>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-custom btn-bordred">Submit</button>
+                    
+                    <div class="form-group mb-0 btn-right">
+                        <button type="submit" class="btn btn-custom btn-bordred">
+                            <div class="loader" style="display: none;"></div>
+                            Submit
+                        </button>
                     </div>
                 </div>
             <!--</div>-->
@@ -184,12 +194,13 @@
 <div class="modal fade" id="FaqAddmodal" tabindex="-1" role="dialog" aria-labelledby="FaqAddmodalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header">
+          <h5 class="modal-title">Add Faq</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">            
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="custom-modal-text">                
+      <div class="custom-modal-text pb-0">                
         <form class="add_Faq" id="add_Faq" action="{{URL('/addFaq/')}}" method="post">
         @csrf
             <div class="row">
@@ -214,9 +225,12 @@
                         <!--<input type="text" class="form-control" value="">-->
                         <textarea name="content" id="content" class="form-control" aria-describedby=""></textarea>
                     </div>
-                    <br>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-custom btn-bordred">Submit</button>
+<!--                    <br>-->
+                    <div class="form-group mb-0 btn-right">
+                        <button type="submit" class="btn btn-custom btn-bordred">
+                            <div class="loader" style="display: none;"></div>
+                            Submit
+                        </button>
                     </div>
                 </div>
             <!--</div>-->
@@ -231,18 +245,19 @@
 <div class="modal fade" id="DeleteModelFaq" tabindex="-1" role="dialog" aria-labelledby="FaqAddmodalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="">
+      <div class="modal-header">
+          <h5 class="modal-title">Delete</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="custom-modal-text">
           <div class="modal-body">
-            Are you sure?
+            Are you sure you want to delete?
           </div>
           <div class="modal-footer">
-              <button type="button" data-dismiss="modal" class="btn btn-primary deletefaq" id="delete" data-id="" value="">Delete</button>
-            <button type="button" data-dismiss="modal" class="btn">Cancel</button>
+              <button type="button" data-dismiss="modal" class="btn btn-primary deletefaq" id="delete" data-id="" value="">Yes</button>
+            <button type="button" data-dismiss="modal" class="btn btn-danger">No</button>
           </div>
       </div>
     </div>

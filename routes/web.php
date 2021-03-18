@@ -16,10 +16,16 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();  
 
 Route::get('/', function(){ return view('pages.frontend.index'); })->name('frontend-home');
+Route::get('/demo', function(){ return view('pages.frontend.index_demo'); })->name('frontend-demo');
 Route::get('faq', [App\Http\Controllers\Faq::class, 'index'])->name('frontend-faq');
 Route::get('contact', function(){ return view('pages.frontend.contact'); })->name('frontend-contact');
 Route::post('/send-contact', [App\Http\Controllers\ContactUsController::class, 'submitForm'])->name('send-contact');
 Route::get('/send-mail-test', [App\Http\Controllers\ContactUsController::class, 'sendMailTest'])->name('send-mail-test');
+Route::get('hire-now', function(){ return view('pages.frontend.hire_now'); })->name('frontend-hirenow');
+//Route::post('/send-hire-now', [App\Http\Controllers\HireNow::class, 'sendHireNow']);
+Route::get('terms-and-conditions', function(){ return view('pages.frontend.terms_and_conditions'); })->name('frontend-terms');
+Route::get('privacy-policy', function(){ return view('pages.frontend.privacy_policy'); })->name('frontend-privacyplicy');
+Route::get('personal-detail-form', function(){ return view('pages.frontend.personal_detail_form'); })->name('frontend-personal-detail');
 
 Route::get('/clear',function(){
     Artisan::call('cache:clear');
@@ -30,9 +36,9 @@ Route::get('/clear',function(){
 });
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm']);
+    Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm'])->name('login');
     Route::get('/secretkey', [App\Http\Controllers\Auth\LoginController::class, 'LoginSecretKey']);
-//    Route::get('/login/user', [App\Http\Controllers\Auth\LoginController::class, 'showUserLoginForm']);
+    Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showUserLoginForm']);
 //    Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
 //    Route::get('/register/user', [App\Http\Controllers\Auth\RegisterController::class, 'showUserRegisterForm']);
 

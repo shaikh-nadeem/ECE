@@ -5,20 +5,20 @@
 <div class="account-pages"></div>
         <div class="clearfix"></div>
         <div class="wrapper-page">
-            <div class="text-center">
-                <a href="" class="log-logo">
-                    <img src="{{asset('assets/img/logo.png')}}">
-                </a>
-            </div>
             <div class="m-t-20 card-box log-body">
+                <div class="text-center">
+                    <a href="" class="log-logo">
+                        <img src="{{asset('assets/img/logo.png')}}">
+                    </a>
+                </div>
                 <div class="text-center">
                     <h4 class="text-uppercase font-bold mb-0">{{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</h4>
                 </div>
                 <div class="p-20">
                     @isset($url)
-                    <form class="form-horizontal m-t-20" id="loginForm" method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    <form class="form-horizontal" id="loginForm" method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
                     @else
-                    <form class="form-horizontal m-t-20" id="loginForm" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    <form class="form-horizontal" id="loginForm" method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                     @endisset
                     @csrf
 
@@ -36,22 +36,23 @@
                             </div>
                         </div>
 
-                        <div class="form-group keyfield" style="display:none">
+<!--                        <div class="form-group keyfield mb-0" style="display:none">
                             <div class="col-xs-12">
                                 <input id="secret_key" type="hidden" class="form-control" name="secret_key"  placeholder="Secret Key" disabled="">
                             </div>
-                        </div>
-<!--                        <div class="form-group">
-                            <label for="mathgroup">Please solve the following math function: {{ app('mathcaptcha')->label() }}</label>
-                            {!! app('mathcaptcha')->input(['class' => 'form-control', 'id' => 'mathgroup']) !!}
+                        </div>-->
+                        <div class="form-group capcha-pin">
+                            <div class="col-sm-12 col-md-2">
+                                <label for="mathgroup" class="mathlabel"> {{ app('mathcaptcha')->label() }}</label></div>
+                            <div class="col-sm-12 col-md-10 pr-0">
+                                {!! app('mathcaptcha')->input(['class' => 'form-control', 'id' => 'mathgroup']) !!}</div>
                             @if ($errors->has('mathcaptcha'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('mathcaptcha') }}</strong>
                                 </span>
                             @endif
-                        </div>-->
-                    {{ app('mathcaptcha')->label() }}
-{!! app('mathcaptcha')->input() !!}
+                        </div>
+                    
                         <div class="form-group ">
 <!--                            <div class="col-xs-12">
                                 <div class="checkbox checkbox-custom">
@@ -68,22 +69,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group text-right m-t-30">
+                        <div class="form-group text-right">
                             <div class="col-xs-12">
-                                <div id="circulardiv" style='display:none'>
-                                <div id="circularG">
-                                    <div id="circularG_1" class="circularG"></div>
-                                    <div id="circularG_2" class="circularG"></div>
-                                    <div id="circularG_3" class="circularG"></div>
-                                    <div id="circularG_4" class="circularG"></div>
-                                    <div id="circularG_5" class="circularG"></div>
-                                    <div id="circularG_6" class="circularG"></div>
-                                    <div id="circularG_7" class="circularG"></div>
-                                    <div id="circularG_8" class="circularG"></div>
-                                </div>
-                                </div>
                                 <button type="submit" class="btn btn-custom btn-bordred btn-block waves-effect waves-light submitbtn">
-                                    {{ __('Sign In') }}
+                                    <div class="loader" style="display: none;"></div>
+                                <span>{{ __('Login') }}</span>
                                 </button>
                             </div>
                         </div>                       
@@ -96,6 +86,15 @@
 @endsection
 
 <style>
+/*    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-box.log-body{
+        position: relative;
+        bottom: 20px;
+    }
     #circulardiv {
         float: right;
         width: 17%;
@@ -269,5 +268,5 @@
         100%{
                 -moz-transform:scale(.3);
         }
-    }
+    }*/
 </style>

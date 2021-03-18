@@ -29,7 +29,7 @@
                                         <p>Email - <span style="font-weight: 600">{{$email}}</span></p>
                                         <p>Purpose - <span style="font-weight: 600">{{$purpose}}</span></p>
                                         <p>Comments - <span style="font-weight: 600">{{$comments}}</span></p>
-                                        <p style="margin-bottom: 15px;margin-top: 0">Email send from <a href="http://eceteacher.betadelivery.com/contact">http://eceteacher.betadelivery.com/contact</a></p>                             
+                                        <p style="margin-bottom: 15px;margin-top: 0">Email sent from <a href="http://eceteacher.betadelivery.com/contact">http://eceteacher.betadelivery.com/contact</a></p>                             
                                             <p style="margin-bottom: 0;margin-top: 35px;font-weight: 600">Thank you.</p> 
                                     </td>
                                 </tr>                           
