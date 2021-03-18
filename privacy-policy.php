@@ -11,7 +11,7 @@ include 'headermenu.php';
     .policy h5 { font-size: 15px; font-family: Arial; font-weight: bold; text-decoration: underline; padding-top: 25px;}
     .policy h6 {font-family: Arial;font-size: 14px;}
     .policy p {font-family: Arial;font-size: 14px;}
-    .policy ul li {font-family: Arial; font-size: 14px; display: list-item; margin-bottom: 10px;}
+    .policy ul li {font-family: Arial; font-size: 14px; display: list-item; }
     @media only screen and (max-width: 767px){
         .secprivacy-policy{padding: 20px;}
     }
@@ -112,7 +112,7 @@ include 'headermenu.php';
             <h5>Contact Us</h5>
             <p>If you have any questions regarding this Privacy Policy, you may contact us using the information below:</p>
             <h3>ECE Teacher</h3>
-            <a href="admin@eceteacher.co.nz ">admin@eceteacher.co.nz </a>
+            <a href="mailto:admin@eceteacher.co.nz ">admin@eceteacher.co.nz </a>
         </div>
     </div>
 </div>

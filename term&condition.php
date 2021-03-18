@@ -9,8 +9,8 @@ include 'headermenu.php';
 
 <div class="wrapper pt-0 bg-white">
     <div class="secTerm">
-        <h2>Relief Teacher Terms & Conditions</h2>
         <div class="content">
+            <h2>Relief Teacher Terms & Conditions</h2>
             <!--1 -->
             <h3>1 Acceptance</h3>
             <ul>
@@ -296,11 +296,7 @@ include 'headermenu.php';
                                     <dd>c. That they have been provided with a reasonable opportunity to take that advice</dd>
                                     <dd>d. That they agree to be bound by these terms and conditions</dd></li>
             </ul>
-
-            <h5> I have read and understood the Terms and Conditions and I agree to be bound by this agreement.</h5>
-
-        </div>
-        
+        </div>       
 </div>
 </div>
 <?php include 'footer.php'; ?>
